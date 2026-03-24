@@ -44,8 +44,43 @@ const importedInstagramVideos = importedInstagramMedia.filter(
   (item) => item.type === "video",
 );
 
+const curatedImageSrcPriority = [
+  "/media/instagram/images/look-24.jpg",
+  "/media/instagram/images/look-23.jpg",
+  "/media/instagram/images/look-17.jpg",
+  "/media/instagram/images/look-16.jpg",
+  "/media/instagram/images/look-14.jpg",
+  "/media/instagram/images/look-15.jpg",
+  "/media/instagram/images/look-13.jpg",
+  "/media/instagram/images/look-10.jpg",
+  "/media/instagram/images/look-22.jpg",
+  "/media/instagram/images/look-07.jpg",
+  "/media/instagram/images/look-01.jpg",
+  "/media/instagram/images/look-20.jpg",
+] as const;
+
+const curatedVideoSrcPriority = [
+  "/media/instagram/videos/reel-03.mp4",
+  "/media/instagram/videos/reel-04.mp4",
+  "/media/instagram/videos/reel-02.mp4",
+  "/media/instagram/videos/reel-01.mp4",
+] as const;
+
+const curatedInstagramImages = curatedImageSrcPriority
+  .map((src) => importedInstagramImages.find((item) => item.src === src))
+  .filter(Boolean) as InstagramMediaItem[];
+
+const curatedInstagramVideos = curatedVideoSrcPriority
+  .map((src) => importedInstagramVideos.find((item) => item.src === src))
+  .filter(Boolean) as InstagramMediaItem[];
+
+const displayInstagramImages =
+  curatedInstagramImages.length > 0 ? curatedInstagramImages : importedInstagramImages;
+const displayInstagramVideos =
+  curatedInstagramVideos.length > 0 ? curatedInstagramVideos : importedInstagramVideos;
+
 function imageAt(index: number, fallback: string) {
-  return importedInstagramImages[index]?.src ?? fallback;
+  return displayInstagramImages[index]?.src ?? fallback;
 }
 
 function imageSet(startIndex: number, fallbacks: [string, string, string]) {
@@ -365,7 +400,6 @@ const lookbookLabels = [
 export const lookbookFrames = lookbookLabels.map((label, index) => ({
   src: imageAt(index, `/media/lookbook/look-0${(index % 6) + 1}.svg`),
   label,
-  href: importedInstagramImages[index]?.postUrl ?? business.instagramUrl,
 }));
 
 export const mediaFallbackNotes = {
@@ -379,20 +413,18 @@ export const mediaFallbackNotes = {
 export const instagramCinematic = {
   profileUrl: business.instagramUrl,
   note:
-    importedInstagramVideos.length > 0
-      ? "Cinematic homepage module is powered by downloaded reels and post imagery from @mr.sergiostore."
+    displayInstagramVideos.length > 0
+      ? "Cinematic homepage module is powered by downloaded, locally hosted reels and stills from @mr.sergiostore."
       : "No reel videos were imported yet. Run scripts/collect_instagram_media.mjs after Instagram login.",
   importedAt:
     (instagramManifest as { extractedAt?: string }).extractedAt ?? business.profileSnapshot.sourceDate,
-  videos: importedInstagramVideos.slice(0, 4).map((item, index) => ({
+  videos: displayInstagramVideos.slice(0, 4).map((item, index) => ({
     src: item.src,
     poster: item.poster ?? imageAt(index, "/media/placeholders/black-tie-tuxedo.svg"),
-    postUrl: item.postUrl ?? business.instagramUrl,
     label: item.shortcode ? `Reel ${item.shortcode}` : `Reel ${index + 1}`,
   })),
-  stills: importedInstagramImages.slice(0, 12).map((item, index) => ({
+  stills: displayInstagramImages.slice(0, 12).map((item, index) => ({
     src: item.src,
-    postUrl: item.postUrl ?? business.instagramUrl,
     label: `Look ${index + 1}`,
   })),
 };

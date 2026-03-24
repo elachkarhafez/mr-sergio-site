@@ -116,19 +116,14 @@ export default function HomePage() {
                 Runway Energy, Directly From The Account.
               </h3>
               <p className="text-sm leading-relaxed text-[var(--muted)] md:text-base">
-                This cinematic module is built from downloaded business-owned Instagram reels and post photography, so visitors move from real looks to inquiry in one seamless flow.
+                This cinematic module is built from downloaded and locally hosted business media, so visitors move from real looks to inquiry in one seamless flow.
               </p>
               <p className="text-xs leading-relaxed text-[var(--muted)]/80">
                 {instagramCinematic.note}
               </p>
               <div className="flex flex-wrap gap-3">
-                <Link
-                  href={instagramCinematic.profileUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="button-ghost"
-                >
-                  Open Instagram
+                <Link href="/lookbook" className="button-ghost">
+                  Open Lookbook
                 </Link>
                 <Link href="/custom-suits" className="button-primary">
                   Start Custom Fit
@@ -160,25 +155,12 @@ export default function HomePage() {
                   />
                 )}
                 <div className="cinematic-film-overlay" />
-                {heroVideo ? (
-                  <Link
-                    href={heroVideo.postUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="cinematic-post-link"
-                  >
-                    View Reel On Instagram
-                  </Link>
-                ) : null}
               </div>
 
               <div className="grid grid-cols-4 gap-2">
                 {cinematicStills.map((still) => (
-                  <Link
+                  <div
                     key={still.src}
-                    href={still.postUrl}
-                    target="_blank"
-                    rel="noreferrer"
                     className="relative aspect-square overflow-hidden rounded-lg border border-[var(--line-soft)]"
                   >
                     <Image
@@ -188,7 +170,7 @@ export default function HomePage() {
                       sizes="(max-width: 1024px) 25vw, 12vw"
                       className="object-cover transition-transform duration-500 hover:scale-105"
                     />
-                  </Link>
+                  </div>
                 ))}
               </div>
             </div>
@@ -273,7 +255,7 @@ export default function HomePage() {
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {lookbookFrames.slice(0, 6).map((frame, index) => (
             <Reveal key={frame.src} delayMs={index * 80}>
-              <LookFrame src={frame.src} label={frame.label} href={frame.href} />
+              <LookFrame src={frame.src} label={frame.label} />
             </Reveal>
           ))}
         </div>

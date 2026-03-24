@@ -27,7 +27,7 @@ export default function LookbookPage() {
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {lookbookFrames.map((frame, index) => (
             <Reveal key={frame.src} delayMs={index * 70}>
-              <LookFrame src={frame.src} label={frame.label} href={frame.href} />
+              <LookFrame src={frame.src} label={frame.label} />
             </Reveal>
           ))}
         </div>
