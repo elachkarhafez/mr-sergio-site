@@ -18,9 +18,9 @@ export function SiteHeader() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-[var(--line-soft)] bg-[rgba(8,10,13,0.72)] backdrop-blur-xl">
+    <header className="site-header sticky top-0 z-40 border-b border-[var(--line-soft)] bg-[rgba(8,10,13,0.72)] backdrop-blur-xl">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
-        <Link href="/" className="group inline-flex items-center gap-3">
+        <Link href="/" className="site-brand group inline-flex items-center gap-3">
           <span className="text-xs uppercase tracking-[0.32em] text-[var(--paper)]">
             {business.name}
           </span>
@@ -35,7 +35,7 @@ export function SiteHeader() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-[11px] uppercase tracking-[0.28em] transition-colors ${
+                className={`site-nav-link text-[11px] uppercase tracking-[0.28em] transition-colors ${
                   active ? "text-[var(--paper)]" : "text-[var(--muted)] hover:text-[var(--paper)]"
                 }`}
               >

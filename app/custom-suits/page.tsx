@@ -30,7 +30,7 @@ export default function CustomSuitsPage() {
           <Reveal delayMs={130}>
             <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-2xl border border-[var(--line-soft)]">
               <Image
-                src="/media/instagram/images/look-04.jpg"
+                src="/media/instagram/images/look-10.jpg"
                 alt="Custom suit concept"
                 fill
                 sizes="(max-width: 1024px) 100vw, 36vw"

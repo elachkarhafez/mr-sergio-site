@@ -33,6 +33,8 @@ export default function RootLayout({
       <body>
         <div className="ambient-glow" aria-hidden />
         <div className="pinstripe-field" aria-hidden />
+        <div className="tailor-blueprint" aria-hidden />
+        <div className="tailor-weave" aria-hidden />
 
         <SiteHeader />
         <main className="mx-auto w-full max-w-7xl flex-1 px-5 pt-10 lg:px-8">{children}</main>
