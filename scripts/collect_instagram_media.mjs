@@ -259,15 +259,11 @@ function parsePostMetadataFromHtml(html, postUrl) {
 async function scrapePostLinks() {
   async function collectLinksFromCurrentPage(page) {
     const anchors = await page.$$eval(
-      'a[href*="/p/"], a[href*="/reel/"], a[href*="/tv/"]',
+      'main a[href*="/p/"], main a[href*="/reel/"], main a[href*="/tv/"]',
       (items) => items.map((anchor) => anchor.getAttribute("href")).filter(Boolean),
     );
-    const html = await page.content();
-    const fromHtml = [
-      ...html.matchAll(/https:\/\/www\.instagram\.com\/(?:p|reel|tv)\/[A-Za-z0-9_-]+\/?/g),
-    ].map((match) => match[0]);
 
-    return unique([...anchors, ...fromHtml].map(cleanInstagramUrl).filter(Boolean)).slice(
+    return unique(anchors.map(cleanInstagramUrl).filter(Boolean)).slice(
       0,
       MAX_LINKS,
     );

@@ -45,25 +45,27 @@ const importedInstagramVideos = importedInstagramMedia.filter(
 );
 
 const curatedImageSrcPriority = [
-  "/media/instagram/images/look-24.jpg",
-  "/media/instagram/images/look-23.jpg",
+  "/media/instagram/images/look-10.jpg",
+  "/media/instagram/images/look-01.jpg",
+  "/media/instagram/images/look-22.jpg",
   "/media/instagram/images/look-17.jpg",
   "/media/instagram/images/look-16.jpg",
-  "/media/instagram/images/look-14.jpg",
-  "/media/instagram/images/look-15.jpg",
-  "/media/instagram/images/look-13.jpg",
-  "/media/instagram/images/look-10.jpg",
-  "/media/instagram/images/look-22.jpg",
-  "/media/instagram/images/look-07.jpg",
-  "/media/instagram/images/look-01.jpg",
+  "/media/instagram/images/look-21.jpg",
   "/media/instagram/images/look-20.jpg",
+  "/media/instagram/images/look-19.jpg",
+  "/media/instagram/images/look-09.jpg",
+  "/media/instagram/images/look-08.jpg",
+  "/media/instagram/images/look-07.jpg",
+  "/media/instagram/images/look-11.jpg",
+  "/media/instagram/images/look-31.jpg",
+  "/media/instagram/images/look-26.jpg",
 ] as const;
 
 const curatedVideoSrcPriority = [
-  "/media/instagram/videos/reel-03.mp4",
-  "/media/instagram/videos/reel-04.mp4",
+  "/media/instagram/videos/reel-06.mp4",
+  "/media/instagram/videos/reel-07.mp4",
+  "/media/instagram/videos/reel-05.mp4",
   "/media/instagram/videos/reel-02.mp4",
-  "/media/instagram/videos/reel-01.mp4",
 ] as const;
 
 const curatedInstagramImages = curatedImageSrcPriority
@@ -80,7 +82,11 @@ const displayInstagramVideos =
   curatedInstagramVideos.length > 0 ? curatedInstagramVideos : importedInstagramVideos;
 
 function imageAt(index: number, fallback: string) {
-  return displayInstagramImages[index]?.src ?? fallback;
+  if (displayInstagramImages.length === 0) {
+    return fallback;
+  }
+
+  return displayInstagramImages[index % displayInstagramImages.length]?.src ?? fallback;
 }
 
 function imageSet(startIndex: number, fallbacks: [string, string, string]) {
