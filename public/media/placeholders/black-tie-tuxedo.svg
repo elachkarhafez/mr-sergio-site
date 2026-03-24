@@ -1,0 +1,26 @@
+<svg width="1200" height="1600" viewBox="0 0 1200 1600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1200" y2="1600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#090a0c"/>
+      <stop offset="1" stop-color="#1b1e24"/>
+    </linearGradient>
+    <pattern id="pin" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M0 0V22" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+      <path d="M11 0V22" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="light" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(840 210) rotate(123) scale(740 580)">
+      <stop stop-color="rgba(255,255,255,0.34)"/>
+      <stop offset="1" stop-color="rgba(255,255,255,0)"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="1600" fill="url(#g)"/>
+  <rect width="1200" height="1600" fill="url(#pin)"/>
+  <rect width="1200" height="1600" fill="url(#light)"/>
+  <path d="M170 1480L440 470H760L1030 1480" stroke="rgba(255,255,255,0.14)" stroke-width="2"/>
+  <path d="M314 1480L524 620H676L886 1480" stroke="rgba(255,255,255,0.11)" stroke-width="2"/>
+  <path d="M522 620L600 560L678 620" stroke="#d7d3ca" stroke-width="3"/>
+  <rect x="92" y="96" width="1016" height="1408" rx="22" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+  <rect x="118" y="124" width="964" height="1352" rx="16" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+  <text x="146" y="1390" fill="rgba(255,255,255,0.84)" font-size="54" font-family="'Georgia', serif" letter-spacing="2">Black Tie Tuxedo</text>
+  <text x="146" y="1452" fill="#d7d3ca" font-size="24" font-family="'Arial', sans-serif" letter-spacing="3">MR. SERGIO EDITORIAL SLOT</text>
+</svg>
