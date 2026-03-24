@@ -1,12 +1,14 @@
 import Image from "next/image";
+import Link from "next/link";
 
 type LookFrameProps = {
   src: string;
   label: string;
+  href?: string;
 };
 
-export function LookFrame({ src, label }: LookFrameProps) {
-  return (
+export function LookFrame({ src, label, href }: LookFrameProps) {
+  const content = (
     <figure className="group relative overflow-hidden rounded-2xl border border-[var(--line-soft)] bg-[var(--surface-2)]/70">
       <div className="relative aspect-[3/4]">
         <Image
@@ -23,6 +25,16 @@ export function LookFrame({ src, label }: LookFrameProps) {
         </figcaption>
       </div>
     </figure>
+  );
+
+  if (!href) {
+    return content;
+  }
+
+  return (
+    <Link href={href} target="_blank" rel="noreferrer">
+      {content}
+    </Link>
   );
 }
 

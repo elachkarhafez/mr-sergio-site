@@ -19,7 +19,7 @@ export default function LookbookPage() {
         <SectionTitle
           eyebrow="Lookbook"
           title="Editorial Frames For Modern Menswear"
-          description="Built as a premium showcase now, with clean slots to replace with approved business-owned Instagram and in-store campaign media."
+          description="A curated edit of real visuals imported from the Mr. Sergio Instagram catalog and styled into a premium lookbook flow."
         />
       </section>
 
@@ -27,7 +27,7 @@ export default function LookbookPage() {
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {lookbookFrames.map((frame, index) => (
             <Reveal key={frame.src} delayMs={index * 70}>
-              <LookFrame src={frame.src} label={frame.label} />
+              <LookFrame src={frame.src} label={frame.label} href={frame.href} />
             </Reveal>
           ))}
         </div>
@@ -43,10 +43,10 @@ export default function LookbookPage() {
             {mediaFallbackNotes.body}
           </p>
           <p className="text-sm text-[var(--muted)]">
-            Add approved files in <code>/public/media/placeholders</code> or point catalog entries to your final image set.
+            Imported files are stored in <code>/public/media/instagram</code> and can be refreshed by rerunning <code>scripts/collect_instagram_media.mjs</code>.
           </p>
           <Link href="/contact" className="button-ghost mt-2">
-            Request Upload Coordination
+            Request Style Appointment
           </Link>
         </Reveal>
       </section>

@@ -29,7 +29,7 @@ export const baseMetadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/media/placeholders/obsidian-three-piece.svg",
+        url: "/media/instagram/images/look-01.jpg",
         width: 1200,
         height: 1600,
         alt: `${business.name} editorial showcase`,
@@ -40,7 +40,7 @@ export const baseMetadata: Metadata = {
     card: "summary_large_image",
     title: `${business.name} | Dearborn Heights Menswear`,
     description: business.description,
-    images: ["/media/placeholders/obsidian-three-piece.svg"],
+    images: ["/media/instagram/images/look-01.jpg"],
   },
 };
 

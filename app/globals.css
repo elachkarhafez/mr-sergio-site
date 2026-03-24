@@ -239,6 +239,48 @@ textarea {
   background: rgba(9, 11, 15, 0.82);
 }
 
+.cinematic-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cinematic-film-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(6, 8, 11, 0.1) 25%, rgba(6, 8, 11, 0.75) 100%),
+    repeating-linear-gradient(
+      180deg,
+      transparent 0 5px,
+      rgba(255, 255, 255, 0.035) 5px 6px
+    );
+  z-index: 2;
+}
+
+.cinematic-post-link {
+  position: absolute;
+  right: 0.95rem;
+  bottom: 0.95rem;
+  z-index: 3;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(9, 11, 15, 0.66);
+  padding: 0.52rem 0.88rem;
+  font-size: 0.63rem;
+  letter-spacing: 0.23em;
+  text-transform: uppercase;
+  transition: border-color 200ms ease, background 200ms ease;
+}
+
+.cinematic-post-link:hover {
+  border-color: rgba(184, 157, 121, 0.65);
+  background: rgba(11, 14, 20, 0.92);
+}
+
 .cinematic-rail::before {
   content: "";
   position: absolute;

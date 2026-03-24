@@ -2,37 +2,35 @@
 
 Date generated: 2026-03-24 (America/New_York)
 
-## Verified brand cue sources
-- Public Instagram profile metadata (`@mr.sergiostore`): follower/post snapshot and bio line
-- Public business listing data: address, phone, operating hours, review highlights
-- Public profile image downloaded and stored as brand crest asset
+## Current status
 
-## Priority Manual Upload Slots
+- Instagram media is imported and stored locally in `public/media/instagram`.
+- Current import output:
+  - `24` image assets
+  - `4` reel video assets
+  - `manifest.json` with post URLs and asset mapping
 
-1. `lookbook/look-01` Hero suit portrait
-- Needed: high-end full-body suit image with clean background
-- Best source candidate: recent business-owned Instagram reel cover or photo post
+## Source and ownership constraints
 
-2. `lookbook/look-02` Tuxedo / black-tie look
-- Needed: evening formalwear with strong lighting
+- Source account: [`@mr.sergiostore`](https://www.instagram.com/mr.sergiostore/)
+- Assets were collected from publicly viewable business posts/reels via logged-in browser session.
+- Only business-owned media should be used for future refreshes.
 
-3. `lookbook/look-03` Tailoring close-up
-- Needed: lapel, fabric texture, cuff, or seam detail
+## Import command
 
-4. `lookbook/look-04` Wedding formal group or groom look
-- Needed: ceremony-ready outfit presentation
+```bash
+IG_CHROME_USER_DATA_DIR=.ig-session npm run media:import
+```
 
-5. `lookbook/look-05` Prom-oriented style
-- Needed: youthful formal look with strong color contrast
+If Instagram requires login:
 
-6. `lookbook/look-06` Store/interior or styling consultation context
-- Needed: environment shot reinforcing local boutique identity
+```bash
+IG_INTERACTIVE_LOGIN=1 IG_CHROME_USER_DATA_DIR=.ig-session npm run media:import
+```
 
-7. Product catalog replacements
-- Replace each `/media/placeholders/*.svg` with business-owned product shots at matching filenames or update paths in `lib/site-data.ts`
+## Runtime usage
 
-## Curation standards
-- Include only sharp, high-resolution, business-owned visuals
-- Exclude blurry, poorly cropped, repetitive, or cluttered media
-- Prioritize formalwear polish, premium styling, and clear garment structure
-
+- `lib/site-data.ts` maps imported media into:
+  - homepage cinematic reel section (`instagramCinematic`)
+  - lookbook frames (`lookbookFrames`)
+  - product gallery sets (`products[*].images`)

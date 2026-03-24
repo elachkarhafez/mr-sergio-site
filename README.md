@@ -83,10 +83,22 @@ npm run build
 
 ## Media Workflow
 
-- Placeholder and editorial slot assets live under `public/media`
+- Imported Instagram assets live under `public/media/instagram`
 - Brand crest is stored at `public/media/brand/mr-sergio-crest.jpg`
-- Homepage includes a cinematic live Instagram profile embed sourced from `@mr.sergiostore`
-- Configure Instagram embed source in `lib/site-data.ts` (`instagramCinematic`)
+- Homepage cinematic module uses downloaded local reels/photos from `@mr.sergiostore`
+- Refresh media import:
+
+```bash
+IG_CHROME_USER_DATA_DIR=.ig-session npm run media:import
+```
+
+- If Instagram blocks anonymous access, run interactive login mode once:
+
+```bash
+IG_INTERACTIVE_LOGIN=1 IG_CHROME_USER_DATA_DIR=.ig-session npm run media:import
+```
+
+- After import, media wiring is handled in `lib/site-data.ts` (`instagramCinematic`, `lookbookFrames`, and product image sets)
 - See:
   - `MEDIA_MANIFEST.md`
   - `public/media/README.md`

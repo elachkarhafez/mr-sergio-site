@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "media:import": "node scripts/collect_instagram_media.mjs"
   },
   "dependencies": {
     "next": "16.2.1",
@@ -20,8 +21,8 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.1",
+    "puppeteer-core": "^24.40.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
 }
-

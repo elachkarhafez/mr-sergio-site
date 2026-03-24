@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import Link from "next/link";
 
 import { LookFrame } from "@/components/ui/look-frame";
@@ -15,6 +15,8 @@ import {
 } from "@/lib/site-data";
 
 const featured = products.filter((item) => item.featured).slice(0, 3);
+const heroVideo = instagramCinematic.videos[0];
+const cinematicStills = instagramCinematic.stills.slice(0, 8);
 
 export default function HomePage() {
   return (
@@ -102,7 +104,7 @@ export default function HomePage() {
         <SectionTitle
           eyebrow="Cinematic Feed"
           title="Instagram Motion, Styled As Editorial Film"
-          description="Live account embed from @mr.sergiostore presented in a cinematic frame treatment while preserving the core Mr. Sergio design direction."
+          description="Downloaded reels and curated stills from @mr.sergiostore, art-directed into a cinematic module while preserving the site's premium visual language."
         />
         <Reveal className="cinematic-shell p-5 md:p-7">
           <div className="grid gap-5 lg:grid-cols-[0.95fr_1.05fr]">
@@ -114,7 +116,7 @@ export default function HomePage() {
                 Runway Energy, Directly From The Account.
               </h3>
               <p className="text-sm leading-relaxed text-[var(--muted)] md:text-base">
-                This cinematic module uses the account&apos;s public Instagram embed source so visitors can move from visual inspiration straight into inquiry.
+                This cinematic module is built from downloaded business-owned Instagram reels and post photography, so visitors move from real looks to inquiry in one seamless flow.
               </p>
               <p className="text-xs leading-relaxed text-[var(--muted)]/80">
                 {instagramCinematic.note}
@@ -134,14 +136,61 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="cinematic-rail min-h-[560px]">
-              <iframe
-                title="Mr Sergio Instagram cinematic embed"
-                src={instagramCinematic.profileEmbedUrl}
-                loading="lazy"
-                className="cinematic-iframe"
-                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
-              />
+            <div className="space-y-3">
+              <div className="cinematic-rail min-h-[560px]">
+                {heroVideo ? (
+                  <video
+                    key={heroVideo.src}
+                    className="cinematic-video"
+                    src={heroVideo.src}
+                    poster={heroVideo.poster}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                  />
+                ) : (
+                  <Image
+                    src={cinematicStills[0]?.src ?? "/media/brand/mr-sergio-crest.jpg"}
+                    alt="Mr Sergio cinematic still"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 52vw"
+                    className="object-cover"
+                  />
+                )}
+                <div className="cinematic-film-overlay" />
+                {heroVideo ? (
+                  <Link
+                    href={heroVideo.postUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="cinematic-post-link"
+                  >
+                    View Reel On Instagram
+                  </Link>
+                ) : null}
+              </div>
+
+              <div className="grid grid-cols-4 gap-2">
+                {cinematicStills.map((still) => (
+                  <Link
+                    key={still.src}
+                    href={still.postUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="relative aspect-square overflow-hidden rounded-lg border border-[var(--line-soft)]"
+                  >
+                    <Image
+                      src={still.src}
+                      alt={still.label}
+                      fill
+                      sizes="(max-width: 1024px) 25vw, 12vw"
+                      className="object-cover transition-transform duration-500 hover:scale-105"
+                    />
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </Reveal>
@@ -202,9 +251,11 @@ export default function HomePage() {
           {reviewHighlights.map((review, index) => (
             <Reveal key={review.quote} delayMs={index * 120}>
               <blockquote className="section-frame h-full p-6">
-                <p className="text-sm leading-relaxed text-[var(--paper)]">“{review.quote}”</p>
+                <p className="text-sm leading-relaxed text-[var(--paper)]">
+                  &ldquo;{review.quote}&rdquo;
+                </p>
                 <footer className="mt-5 text-xs uppercase tracking-[0.22em] text-[var(--muted)]">
-                  {review.author} • {review.date}
+                  {review.author} - {review.date}
                 </footer>
               </blockquote>
             </Reveal>
@@ -216,13 +267,13 @@ export default function HomePage() {
         <SectionTitle
           eyebrow="Gallery Highlights"
           title="Editorial Preview"
-          description="Placeholders are styled to match the art direction now and can be replaced with approved business-owned campaign imagery at any time."
+          description="Recent Instagram visuals from the business account presented in an editorial grid treatment."
         />
 
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {lookbookFrames.slice(0, 6).map((frame, index) => (
             <Reveal key={frame.src} delayMs={index * 80}>
-              <LookFrame src={frame.src} label={frame.label} />
+              <LookFrame src={frame.src} label={frame.label} href={frame.href} />
             </Reveal>
           ))}
         </div>
@@ -250,5 +301,6 @@ export default function HomePage() {
     </div>
   );
 }
+
 
 

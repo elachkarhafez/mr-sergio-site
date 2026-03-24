@@ -23,6 +23,9 @@
 # misc
 .DS_Store
 *.pem
+.ig-session*/
+public/media/instagram/debug-page.html
+public/media/instagram/debug-page.png
 
 # debug
 npm-debug.log*

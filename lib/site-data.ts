@@ -1,3 +1,5 @@
+import instagramManifest from "@/public/media/instagram/manifest.json";
+
 export type ProductCategory =
   | "suits"
   | "blazers"
@@ -22,6 +24,34 @@ export type Product = {
   featured?: boolean;
 };
 
+type InstagramMediaItem = {
+  id: string;
+  type: "image" | "video";
+  src: string;
+  poster?: string;
+  postUrl?: string;
+  shortcode?: string;
+  title?: string;
+  description?: string;
+};
+
+const importedInstagramMedia = ((instagramManifest as { media?: InstagramMediaItem[] })
+  .media ?? []) as InstagramMediaItem[];
+const importedInstagramImages = importedInstagramMedia.filter(
+  (item) => item.type === "image",
+);
+const importedInstagramVideos = importedInstagramMedia.filter(
+  (item) => item.type === "video",
+);
+
+function imageAt(index: number, fallback: string) {
+  return importedInstagramImages[index]?.src ?? fallback;
+}
+
+function imageSet(startIndex: number, fallbacks: [string, string, string]) {
+  return fallbacks.map((fallback, index) => imageAt(startIndex + index, fallback));
+}
+
 export const business = {
   name: "Mr. Sergio",
   phoneDisplay: "(313) 597-3541",
@@ -37,7 +67,7 @@ export const business = {
     postsLabel: "148",
     sourceDate: "March 24, 2026",
     sourceNote:
-      "Public profile metadata accessible; post-level media extraction was restricted in this environment.",
+      "Public Instagram media was imported from a logged-in browser session and wired directly into this site build.",
   },
 };
 
@@ -101,11 +131,11 @@ export const products: Product[] = [
     availability: "Most sizes in-store. Select colors by request.",
     colors: ["Black", "Midnight", "Graphite"],
     sizes: ["36-52 Regular", "Select Long", "Tailoring available"],
-    images: [
+    images: imageSet(0, [
       "/media/placeholders/obsidian-three-piece.svg",
       "/media/placeholders/midnight-peak-lapel.svg",
       "/media/placeholders/black-tie-tuxedo.svg",
-    ],
+    ]),
     featured: true,
   },
   {
@@ -123,11 +153,11 @@ export const products: Product[] = [
     availability: "Core sizes available. Fittings recommended.",
     colors: ["Midnight", "Black", "Smoke"],
     sizes: ["36-50 Regular", "Tailored fit options"],
-    images: [
+    images: imageSet(3, [
       "/media/placeholders/midnight-peak-lapel.svg",
       "/media/placeholders/black-tie-tuxedo.svg",
       "/media/placeholders/obsidian-three-piece.svg",
-    ],
+    ]),
     featured: true,
   },
   {
@@ -145,11 +175,11 @@ export const products: Product[] = [
     availability: "Rotating seasonal stock.",
     colors: ["Graphite", "Charcoal", "Steel Blue"],
     sizes: ["S-XXL", "Slim and Modern fits"],
-    images: [
+    images: imageSet(6, [
       "/media/placeholders/graphite-crosshatch.svg",
       "/media/placeholders/charcoal-windowpane.svg",
       "/media/placeholders/steel-blue-blazer.svg",
-    ],
+    ]),
     featured: true,
   },
   {
@@ -167,11 +197,11 @@ export const products: Product[] = [
     availability: "Limited drops. Reserve recommended.",
     colors: ["Ivory", "Cream", "Champagne"],
     sizes: ["36-50 Regular", "Tailoring available"],
-    images: [
+    images: imageSet(9, [
       "/media/placeholders/ivory-evening-jacket.svg",
       "/media/placeholders/black-tie-tuxedo.svg",
       "/media/placeholders/charcoal-windowpane.svg",
-    ],
+    ]),
   },
   {
     slug: "signature-white-shirt",
@@ -188,11 +218,11 @@ export const products: Product[] = [
     availability: "Regularly restocked.",
     colors: ["White", "Ice", "Light Blue"],
     sizes: ["S-3XL", "Neck fit options"],
-    images: [
+    images: imageSet(12, [
       "/media/placeholders/ivory-evening-jacket.svg",
       "/media/placeholders/graphite-crosshatch.svg",
       "/media/placeholders/steel-blue-blazer.svg",
-    ],
+    ]),
   },
   {
     slug: "espresso-formal-loafer",
@@ -209,11 +239,11 @@ export const products: Product[] = [
     availability: "Popular sizes move quickly.",
     colors: ["Espresso", "Black"],
     sizes: ["8-13 US"],
-    images: [
+    images: imageSet(15, [
       "/media/placeholders/espresso-loafer.svg",
       "/media/placeholders/black-tie-tuxedo.svg",
       "/media/placeholders/obsidian-three-piece.svg",
-    ],
+    ]),
   },
   {
     slug: "ceremony-accessory-set",
@@ -230,11 +260,11 @@ export const products: Product[] = [
     availability: "In-store variety changes weekly.",
     colors: ["Ivory", "Black", "Burgundy", "Navy", "Silver"],
     sizes: ["One size / adjustable"],
-    images: [
+    images: imageSet(18, [
       "/media/placeholders/ceremony-accessory-set.svg",
       "/media/placeholders/midnight-peak-lapel.svg",
       "/media/placeholders/obsidian-three-piece.svg",
-    ],
+    ]),
   },
   {
     slug: "prom-night-signature",
@@ -251,11 +281,11 @@ export const products: Product[] = [
     availability: "Seasonal. Contact for current color availability.",
     colors: ["Black", "Royal", "Deep Wine"],
     sizes: ["34-48 Regular"],
-    images: [
+    images: imageSet(21, [
       "/media/placeholders/prom-night-signature.svg",
       "/media/placeholders/black-tie-tuxedo.svg",
       "/media/placeholders/ceremony-accessory-set.svg",
-    ],
+    ]),
   },
 ];
 
@@ -320,43 +350,51 @@ export const customSuitJourney = [
   },
 ];
 
-export const lookbookFrames = [
-  {
-    src: "/media/lookbook/look-01.svg",
-    label: "Evening Precision",
-  },
-  {
-    src: "/media/lookbook/look-02.svg",
-    label: "Peak Lapel Statement",
-  },
-  {
-    src: "/media/lookbook/look-03.svg",
-    label: "Tailored Texture",
-  },
-  {
-    src: "/media/lookbook/look-04.svg",
-    label: "Wedding Formal Direction",
-  },
-  {
-    src: "/media/lookbook/look-05.svg",
-    label: "Ceremony Contrast",
-  },
-  {
-    src: "/media/lookbook/look-06.svg",
-    label: "Black Tie Depth",
-  },
+const lookbookLabels = [
+  "Evening Precision",
+  "Peak Lapel Statement",
+  "Tailored Texture",
+  "Wedding Formal Direction",
+  "Ceremony Contrast",
+  "Black Tie Depth",
+  "Prom Night Energy",
+  "Modern Suiting",
+  "Formal Essentials",
 ];
+
+export const lookbookFrames = lookbookLabels.map((label, index) => ({
+  src: imageAt(index, `/media/lookbook/look-0${(index % 6) + 1}.svg`),
+  label,
+  href: importedInstagramImages[index]?.postUrl ?? business.instagramUrl,
+}));
 
 export const mediaFallbackNotes = {
   title: "Media Import Status",
-  body: "This build includes a premium placeholder gallery plus one verified public brand asset. Replace placeholders with business-owned photos/videos in /public/media as soon as approved media is supplied.",
+  body:
+    importedInstagramMedia.length > 0
+      ? "Instagram photos and reels are imported and live in this build from @mr.sergiostore."
+      : "Instagram media import did not complete in this environment. Provide approved assets or rerun scripts/collect_instagram_media.mjs.",
 };
 
 export const instagramCinematic = {
-  profileEmbedUrl: "https://www.instagram.com/mr.sergiostore/embed/",
-  profileUrl: "https://www.instagram.com/mr.sergiostore/",
+  profileUrl: business.instagramUrl,
   note:
-    "Public profile embed is live. For post-specific reel embeds, add approved reel URLs in this content file when available.",
+    importedInstagramVideos.length > 0
+      ? "Cinematic homepage module is powered by downloaded reels and post imagery from @mr.sergiostore."
+      : "No reel videos were imported yet. Run scripts/collect_instagram_media.mjs after Instagram login.",
+  importedAt:
+    (instagramManifest as { extractedAt?: string }).extractedAt ?? business.profileSnapshot.sourceDate,
+  videos: importedInstagramVideos.slice(0, 4).map((item, index) => ({
+    src: item.src,
+    poster: item.poster ?? imageAt(index, "/media/placeholders/black-tie-tuxedo.svg"),
+    postUrl: item.postUrl ?? business.instagramUrl,
+    label: item.shortcode ? `Reel ${item.shortcode}` : `Reel ${index + 1}`,
+  })),
+  stills: importedInstagramImages.slice(0, 12).map((item, index) => ({
+    src: item.src,
+    postUrl: item.postUrl ?? business.instagramUrl,
+    label: `Look ${index + 1}`,
+  })),
 };
 
 export function getProductBySlug(slug: string) {
