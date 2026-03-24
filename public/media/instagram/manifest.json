@@ -4,21 +4,11 @@
   "extractedAt": "2026-03-24T08:45:06.766Z",
   "counts": {
     "linksDiscovered": 48,
-    "videos": 8,
-    "images": 32,
-    "total": 40
+    "videos": 4,
+    "images": 14,
+    "total": 18
   },
   "media": [
-    {
-      "id": "ig-video-1",
-      "type": "video",
-      "postUrl": "https://www.instagram.com/reel/C4ykxj9r_Jz/",
-      "shortcode": "C4ykxj9r_Jz",
-      "title": "mr.sergio on Instagram",
-      "description": "8 likes, 0 comments - mr.sergiostore on March 21, 2024",
-      "src": "/media/instagram/videos/reel-01.mp4",
-      "poster": "/media/instagram/images/reel-01-poster.jpg"
-    },
     {
       "id": "ig-video-2",
       "type": "video",
@@ -28,26 +18,6 @@
       "description": "13 likes, 0 comments - mr.sergiostore on March 21, 2024",
       "src": "/media/instagram/videos/reel-02.mp4",
       "poster": "/media/instagram/images/reel-02-poster.jpg"
-    },
-    {
-      "id": "ig-video-3",
-      "type": "video",
-      "postUrl": "https://www.instagram.com/p/C4yaghdPHS0/",
-      "shortcode": "C4yaghdPHS0",
-      "title": "mr.sergio on Instagram",
-      "description": "5 likes, 0 comments - mr.sergiostore on March 21, 2024",
-      "src": "/media/instagram/videos/reel-03.mp4",
-      "poster": "/media/instagram/images/reel-03-poster.jpg"
-    },
-    {
-      "id": "ig-video-4",
-      "type": "video",
-      "postUrl": "https://www.instagram.com/p/C4yaUWivXa2/",
-      "shortcode": "C4yaUWivXa2",
-      "title": "mr.sergio on Instagram: \"Available now sizes from s-xxl\"",
-      "description": "5 likes, 0 comments - mr.sergiostore on March 21, 2024: \"Available now sizes from s-xxl\".",
-      "src": "/media/instagram/videos/reel-04.mp4",
-      "poster": "/media/instagram/images/reel-04-poster.jpg"
     },
     {
       "id": "ig-video-5",
@@ -80,16 +50,6 @@
       "poster": "/media/instagram/images/reel-07-poster.jpg"
     },
     {
-      "id": "ig-video-8",
-      "type": "video",
-      "postUrl": "https://www.instagram.com/p/C4uAdFCLoB4/",
-      "shortcode": "C4uAdFCLoB4",
-      "title": "mr.sergio on Instagram",
-      "description": "6 likes, 0 comments - mr.sergiostore on March 19, 2024",
-      "src": "/media/instagram/videos/reel-08.mp4",
-      "poster": "/media/instagram/images/reel-08-poster.jpg"
-    },
-    {
       "id": "ig-image-1",
       "type": "image",
       "postUrl": "https://www.instagram.com/p/C4uAUkOLnk9/",
@@ -97,51 +57,6 @@
       "title": "mr.sergio on Instagram",
       "description": "3 likes, 0 comments - mr.sergiostore on March 19, 2024",
       "src": "/media/instagram/images/look-01.jpg"
-    },
-    {
-      "id": "ig-image-2",
-      "type": "image",
-      "postUrl": "https://www.instagram.com/reel/C4qdAngL5Jh/",
-      "shortcode": "C4qdAngL5Jh",
-      "title": "mr.sergio on Instagram: \"Dressed to impress in a double-breasted suit, with a touch of sophistication in lush green.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n#instafashion #suit #prom #promseason #instagramreels #reels #summer2024 #dress #gentleman #mrsergio\"",
-      "description": "7 likes, 0 comments - mr.sergiostore on March 18, 2024: \"Dressed to impress in a double-breasted suit, with a touch of sophistication in lush green.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n#instafashion #suit #prom #promseason #instagramreels #reels #summer2024 #dress #gentleman #mrsergio\".",
-      "src": "/media/instagram/images/look-02.jpg"
-    },
-    {
-      "id": "ig-image-3",
-      "type": "image",
-      "postUrl": "https://www.instagram.com/p/C4qSR7sLRJW/",
-      "shortcode": "C4qSR7sLRJW",
-      "title": "mr.sergio on Instagram",
-      "description": "5 likes, 0 comments - mr.sergiostore on March 18, 2024",
-      "src": "/media/instagram/images/look-03.jpg"
-    },
-    {
-      "id": "ig-image-4",
-      "type": "image",
-      "postUrl": "https://www.instagram.com/reel/C4i0KmQL-Ck/",
-      "shortcode": "C4i0KmQL-Ck",
-      "title": "mr.sergio on Instagram: \"Effortless elegance meets comfort in this versatile linen duo, designed for the modern minimalist.\n#menfashion #summertime\"",
-      "description": "27 likes, 0 comments - mr.sergiostore on March 15, 2024: \"Effortless elegance meets comfort in this versatile linen duo, designed for the modern minimalist.\n#menfashion #summertime\".",
-      "src": "/media/instagram/images/look-04.jpg"
-    },
-    {
-      "id": "ig-image-5",
-      "type": "image",
-      "postUrl": "https://www.instagram.com/reel/C4hA9NVr7Kk/",
-      "shortcode": "C4hA9NVr7Kk",
-      "title": "mr.sergio on Instagram: \"Spring into summer weddings with style that stands out. Suit up, celebrate love, and shine brighter than the sun. 💒👔 #SpringSummerWeddings #weddingseasonelegance #instagramreels\"",
-      "description": "13 likes, 0 comments - mr.sergiostore on March 14, 2024: \"Spring into summer weddings with style that stands out. Suit up, celebrate love, and shine brighter than the sun. 💒👔 #SpringSummerWeddings #weddingseasonelegance #instagramreels\".",
-      "src": "/media/instagram/images/look-05.jpg"
-    },
-    {
-      "id": "ig-image-6",
-      "type": "image",
-      "postUrl": "https://www.instagram.com/reel/C4gP_fOLbwK/",
-      "shortcode": "C4gP_fOLbwK",
-      "title": "mr.sergio on Instagram: \"“Channeling my inner Thomas Shelby vibes. Peaky Blinders, but make it fashion.”\"",
-      "description": "38 likes, 0 comments - mr.sergiostore on March 14, 2024: \"“Channeling my inner Thomas Shelby vibes. Peaky Blinders, but make it fashion.”\".",
-      "src": "/media/instagram/images/look-06.jpg"
     },
     {
       "id": "ig-image-7",
@@ -189,42 +104,6 @@
       "src": "/media/instagram/images/look-11.jpg"
     },
     {
-      "id": "ig-image-12",
-      "type": "image",
-      "postUrl": "https://www.instagram.com/reel/C4MWoZPrlSd/",
-      "shortcode": "C4MWoZPrlSd",
-      "title": "mr.sergio on Instagram: \"The spring-summer collection😎 now available at the store🔥🔥 \n#summercollection #mrsergio #spring #prom #dearborn #dearbornheights #insta #instafashion #foryou #viral\"",
-      "description": "13 likes, 0 comments - mr.sergiostore on March 6, 2024: \"The spring-summer collection😎 now available at the store🔥🔥 \n#summercollection #mrsergio #spring #prom #dearborn #dearbornheights #insta #instafashion #foryou #viral\".",
-      "src": "/media/instagram/images/look-12.jpg"
-    },
-    {
-      "id": "ig-image-13",
-      "type": "image",
-      "postUrl": "https://www.instagram.com/reel/C4BHI59LwKP/",
-      "shortcode": "C4BHI59LwKP",
-      "title": "mr.sergio on Instagram: \"“Curated elegance for every taste. Unveil the essence of fashion at [Mr.Sergio store]. Explore our collections and make every outfit a statement. #FashionUnveiled #mrsergio \n22732 ford rd,Dearborn heights\"",
-      "description": "16 likes, 0 comments - mr.sergiostore on March 2, 2024: \"“Curated elegance for every taste. Unveil the essence of fashion at [Mr.Sergio store]. Explore our collections and make every outfit a statement. #FashionUnveiled #mrsergio \n22732 ford rd,Dearborn heights\".",
-      "src": "/media/instagram/images/look-13.jpg"
-    },
-    {
-      "id": "ig-image-14",
-      "type": "image",
-      "postUrl": "https://www.instagram.com/reel/C3_vvTsrKCQ/",
-      "shortcode": "C3_vvTsrKCQ",
-      "title": "mr.sergio on Instagram",
-      "description": "8 likes, 0 comments - mr.sergiostore on March 1, 2024",
-      "src": "/media/instagram/images/look-14.jpg"
-    },
-    {
-      "id": "ig-image-15",
-      "type": "image",
-      "postUrl": "https://www.instagram.com/reel/C3tuSgkIaQ6/",
-      "shortcode": "C3tuSgkIaQ6",
-      "title": "mr.sergio on Instagram: \"“Style is a way to say who you are without having to speak.” - Rachel Zoe. Explore your identity through fashion at Mr.Sergio. 👕🗣️ #FashionQuotes #SignatureStyle”\n\n#explore #explorepage #viral #trending #trendingnow #gainpost #gain #gaintrick #gaintrain #gainfollowers #outfits #amazonfinds #outfitinspiration #outfitideas #outfitinspo #fashion #winteroutfit #melanin #winterfashion #nike #represent #telfar #postpage #baddies #followme #ootw #lanvin\"",
-      "description": "21 likes, 0 comments - mr.sergiostore on February 23, 2024: \"“Style is a way to say who you are without having to speak.” - Rachel Zoe. Explore your identity through fashion at Mr.Sergio. 👕🗣️ #FashionQuotes #SignatureStyle”\n\n#explore #explorepage #viral #trending #trendingnow #gainpost #gain #gaintrick #gaintrain #gainfollowers #outfits #amazonfinds #outfitinspiration #outfitideas #outfitinspo #fashion #winteroutfit #melanin #winterfashion #nike #represent #telfar #postpage #baddies #followme #ootw #lanvin\".",
-      "src": "/media/instagram/images/look-15.jpg"
-    },
-    {
       "id": "ig-image-16",
       "type": "image",
       "postUrl": "https://www.instagram.com/p/C3lYzGZLymW/",
@@ -241,15 +120,6 @@
       "title": "mr.sergio on Instagram",
       "description": "6 likes, 0 comments - mr.sergiostore on February 20, 2024",
       "src": "/media/instagram/images/look-17.jpg"
-    },
-    {
-      "id": "ig-image-18",
-      "type": "image",
-      "postUrl": "https://www.instagram.com/p/C3lYe9WrhcB/",
-      "shortcode": "C3lYe9WrhcB",
-      "title": "mr.sergio on Instagram",
-      "description": "3 likes, 0 comments - mr.sergiostore on February 20, 2024",
-      "src": "/media/instagram/images/look-18.jpg"
     },
     {
       "id": "ig-image-19",
@@ -288,33 +158,6 @@
       "src": "/media/instagram/images/look-22.jpg"
     },
     {
-      "id": "ig-image-23",
-      "type": "image",
-      "postUrl": "https://www.instagram.com/p/C3lXk5mLf01/",
-      "shortcode": "C3lXk5mLf01",
-      "title": "mr.sergio on Instagram",
-      "description": "8 likes, 0 comments - mr.sergiostore on February 20, 2024",
-      "src": "/media/instagram/images/look-23.jpg"
-    },
-    {
-      "id": "ig-image-24",
-      "type": "image",
-      "postUrl": "https://www.instagram.com/reel/C3lOZmHL3TZ/",
-      "shortcode": "C3lOZmHL3TZ",
-      "title": "mr.sergio on Instagram: \"Sale up to 50% on all winter collection 🔥🔥\"",
-      "description": "20 likes, 0 comments - mr.sergiostore on February 20, 2024: \"Sale up to 50% on all winter collection 🔥🔥\".",
-      "src": "/media/instagram/images/look-24.jpg"
-    },
-    {
-      "id": "ig-image-25",
-      "type": "image",
-      "postUrl": "https://www.instagram.com/reel/C3YVoVrLTx2/",
-      "shortcode": "C3YVoVrLTx2",
-      "title": "mr.sergio on Instagram",
-      "description": "18 likes, 0 comments - mr.sergiostore on February 15, 2024",
-      "src": "/media/instagram/images/look-25.jpg"
-    },
-    {
       "id": "ig-image-26",
       "type": "image",
       "postUrl": "https://www.instagram.com/reel/C3WK3fbrgyj/",
@@ -324,42 +167,6 @@
       "src": "/media/instagram/images/look-26.jpg"
     },
     {
-      "id": "ig-image-27",
-      "type": "image",
-      "postUrl": "https://www.instagram.com/reel/C3BpzuiLW4-/",
-      "shortcode": "C3BpzuiLW4-",
-      "title": "mr.sergio on Instagram",
-      "description": "14 likes, 0 comments - mr.sergiostore on February 6, 2024",
-      "src": "/media/instagram/images/look-27.jpg"
-    },
-    {
-      "id": "ig-image-28",
-      "type": "image",
-      "postUrl": "https://www.instagram.com/p/C2-pKksPTqq/",
-      "shortcode": "C2-pKksPTqq",
-      "title": "mr.sergio on Instagram: \"Are you ready?🔥join us for our grand opening on Feb/8 at 3:00 pm and enjoy 30% off everything 🔥🔥😍\n#grandopening #mrsergio #dearborn #michigan\"",
-      "description": "13 likes, 1 comments - mr.sergiostore on February 5, 2024: \"Are you ready?🔥join us for our grand opening on Feb/8 at 3:00 pm and enjoy 30% off everything 🔥🔥😍\n#grandopening #mrsergio #dearborn #michigan\".",
-      "src": "/media/instagram/images/look-28.jpg"
-    },
-    {
-      "id": "ig-image-29",
-      "type": "image",
-      "postUrl": "https://www.instagram.com/reel/C20nxhnrs0G/",
-      "shortcode": "C20nxhnrs0G",
-      "title": "mr.sergio on Instagram: \"Are you ready?🔥join us for our grand opening on Feb/8 and enjoy 30% off everything 🔥🔥😍\n#grandopening #mrsergio #dearborn #michigan\"",
-      "description": "9 likes, 0 comments - mr.sergiostore on February 1, 2024: \"Are you ready?🔥join us for our grand opening on Feb/8 and enjoy 30% off everything 🔥🔥😍\n#grandopening #mrsergio #dearborn #michigan\".",
-      "src": "/media/instagram/images/look-29.jpg"
-    },
-    {
-      "id": "ig-image-30",
-      "type": "image",
-      "postUrl": "https://www.instagram.com/p/C20KbrNrVlz/",
-      "shortcode": "C20KbrNrVlz",
-      "title": "mr.sergio on Instagram: \"Out fit of the day 😎\"",
-      "description": "13 likes, 0 comments - mr.sergiostore on February 1, 2024: \"Out fit of the day 😎\".",
-      "src": "/media/instagram/images/look-30.jpg"
-    },
-    {
       "id": "ig-image-31",
       "type": "image",
       "postUrl": "https://www.instagram.com/reel/C20J6Ivr497/",
@@ -367,28 +174,9 @@
       "title": "mr.sergio on Instagram: \"No caption 🎶\"",
       "description": "22 likes, 0 comments - mr.sergiostore on February 1, 2024: \"No caption 🎶\".",
       "src": "/media/instagram/images/look-31.jpg"
-    },
-    {
-      "id": "ig-image-32",
-      "type": "image",
-      "postUrl": "https://www.instagram.com/reel/C20IAmxrN2Z/",
-      "shortcode": "C20IAmxrN2Z",
-      "title": "mr.sergio on Instagram: \"Ready for valentine collection 🔥❤️\"",
-      "description": "14 likes, 1 comments - mr.sergiostore on February 1, 2024: \"Ready for valentine collection 🔥❤️\".",
-      "src": "/media/instagram/images/look-32.jpg"
     }
   ],
   "videos": [
-    {
-      "id": "ig-video-1",
-      "type": "video",
-      "postUrl": "https://www.instagram.com/reel/C4ykxj9r_Jz/",
-      "shortcode": "C4ykxj9r_Jz",
-      "title": "mr.sergio on Instagram",
-      "description": "8 likes, 0 comments - mr.sergiostore on March 21, 2024",
-      "src": "/media/instagram/videos/reel-01.mp4",
-      "poster": "/media/instagram/images/reel-01-poster.jpg"
-    },
     {
       "id": "ig-video-2",
       "type": "video",
@@ -398,26 +186,6 @@
       "description": "13 likes, 0 comments - mr.sergiostore on March 21, 2024",
       "src": "/media/instagram/videos/reel-02.mp4",
       "poster": "/media/instagram/images/reel-02-poster.jpg"
-    },
-    {
-      "id": "ig-video-3",
-      "type": "video",
-      "postUrl": "https://www.instagram.com/p/C4yaghdPHS0/",
-      "shortcode": "C4yaghdPHS0",
-      "title": "mr.sergio on Instagram",
-      "description": "5 likes, 0 comments - mr.sergiostore on March 21, 2024",
-      "src": "/media/instagram/videos/reel-03.mp4",
-      "poster": "/media/instagram/images/reel-03-poster.jpg"
-    },
-    {
-      "id": "ig-video-4",
-      "type": "video",
-      "postUrl": "https://www.instagram.com/p/C4yaUWivXa2/",
-      "shortcode": "C4yaUWivXa2",
-      "title": "mr.sergio on Instagram: \"Available now sizes from s-xxl\"",
-      "description": "5 likes, 0 comments - mr.sergiostore on March 21, 2024: \"Available now sizes from s-xxl\".",
-      "src": "/media/instagram/videos/reel-04.mp4",
-      "poster": "/media/instagram/images/reel-04-poster.jpg"
     },
     {
       "id": "ig-video-5",
@@ -448,16 +216,6 @@
       "description": "15 likes, 0 comments - mr.sergiostore on March 19, 2024: \"“Dress to impress with our sleek Italian style suits, perfect for making a bold statement wherever you go. Confidence meets style in every stitch.”\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n#italian #suits #prom #wedding #graduation #instagramreels #reels #michigan #dearborn #mrsergio #elegant #handsome\".",
       "src": "/media/instagram/videos/reel-07.mp4",
       "poster": "/media/instagram/images/reel-07-poster.jpg"
-    },
-    {
-      "id": "ig-video-8",
-      "type": "video",
-      "postUrl": "https://www.instagram.com/p/C4uAdFCLoB4/",
-      "shortcode": "C4uAdFCLoB4",
-      "title": "mr.sergio on Instagram",
-      "description": "6 likes, 0 comments - mr.sergiostore on March 19, 2024",
-      "src": "/media/instagram/videos/reel-08.mp4",
-      "poster": "/media/instagram/images/reel-08-poster.jpg"
     }
   ],
   "images": [
@@ -471,51 +229,6 @@
       "src": "/media/instagram/images/look-01.jpg"
     },
     {
-      "id": "ig-image-2",
-      "type": "image",
-      "postUrl": "https://www.instagram.com/reel/C4qdAngL5Jh/",
-      "shortcode": "C4qdAngL5Jh",
-      "title": "mr.sergio on Instagram: \"Dressed to impress in a double-breasted suit, with a touch of sophistication in lush green.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n#instafashion #suit #prom #promseason #instagramreels #reels #summer2024 #dress #gentleman #mrsergio\"",
-      "description": "7 likes, 0 comments - mr.sergiostore on March 18, 2024: \"Dressed to impress in a double-breasted suit, with a touch of sophistication in lush green.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n#instafashion #suit #prom #promseason #instagramreels #reels #summer2024 #dress #gentleman #mrsergio\".",
-      "src": "/media/instagram/images/look-02.jpg"
-    },
-    {
-      "id": "ig-image-3",
-      "type": "image",
-      "postUrl": "https://www.instagram.com/p/C4qSR7sLRJW/",
-      "shortcode": "C4qSR7sLRJW",
-      "title": "mr.sergio on Instagram",
-      "description": "5 likes, 0 comments - mr.sergiostore on March 18, 2024",
-      "src": "/media/instagram/images/look-03.jpg"
-    },
-    {
-      "id": "ig-image-4",
-      "type": "image",
-      "postUrl": "https://www.instagram.com/reel/C4i0KmQL-Ck/",
-      "shortcode": "C4i0KmQL-Ck",
-      "title": "mr.sergio on Instagram: \"Effortless elegance meets comfort in this versatile linen duo, designed for the modern minimalist.\n#menfashion #summertime\"",
-      "description": "27 likes, 0 comments - mr.sergiostore on March 15, 2024: \"Effortless elegance meets comfort in this versatile linen duo, designed for the modern minimalist.\n#menfashion #summertime\".",
-      "src": "/media/instagram/images/look-04.jpg"
-    },
-    {
-      "id": "ig-image-5",
-      "type": "image",
-      "postUrl": "https://www.instagram.com/reel/C4hA9NVr7Kk/",
-      "shortcode": "C4hA9NVr7Kk",
-      "title": "mr.sergio on Instagram: \"Spring into summer weddings with style that stands out. Suit up, celebrate love, and shine brighter than the sun. 💒👔 #SpringSummerWeddings #weddingseasonelegance #instagramreels\"",
-      "description": "13 likes, 0 comments - mr.sergiostore on March 14, 2024: \"Spring into summer weddings with style that stands out. Suit up, celebrate love, and shine brighter than the sun. 💒👔 #SpringSummerWeddings #weddingseasonelegance #instagramreels\".",
-      "src": "/media/instagram/images/look-05.jpg"
-    },
-    {
-      "id": "ig-image-6",
-      "type": "image",
-      "postUrl": "https://www.instagram.com/reel/C4gP_fOLbwK/",
-      "shortcode": "C4gP_fOLbwK",
-      "title": "mr.sergio on Instagram: \"“Channeling my inner Thomas Shelby vibes. Peaky Blinders, but make it fashion.”\"",
-      "description": "38 likes, 0 comments - mr.sergiostore on March 14, 2024: \"“Channeling my inner Thomas Shelby vibes. Peaky Blinders, but make it fashion.”\".",
-      "src": "/media/instagram/images/look-06.jpg"
-    },
-    {
       "id": "ig-image-7",
       "type": "image",
       "postUrl": "https://www.instagram.com/p/C4eJCD7Li4Q/",
@@ -561,42 +274,6 @@
       "src": "/media/instagram/images/look-11.jpg"
     },
     {
-      "id": "ig-image-12",
-      "type": "image",
-      "postUrl": "https://www.instagram.com/reel/C4MWoZPrlSd/",
-      "shortcode": "C4MWoZPrlSd",
-      "title": "mr.sergio on Instagram: \"The spring-summer collection😎 now available at the store🔥🔥 \n#summercollection #mrsergio #spring #prom #dearborn #dearbornheights #insta #instafashion #foryou #viral\"",
-      "description": "13 likes, 0 comments - mr.sergiostore on March 6, 2024: \"The spring-summer collection😎 now available at the store🔥🔥 \n#summercollection #mrsergio #spring #prom #dearborn #dearbornheights #insta #instafashion #foryou #viral\".",
-      "src": "/media/instagram/images/look-12.jpg"
-    },
-    {
-      "id": "ig-image-13",
-      "type": "image",
-      "postUrl": "https://www.instagram.com/reel/C4BHI59LwKP/",
-      "shortcode": "C4BHI59LwKP",
-      "title": "mr.sergio on Instagram: \"“Curated elegance for every taste. Unveil the essence of fashion at [Mr.Sergio store]. Explore our collections and make every outfit a statement. #FashionUnveiled #mrsergio \n22732 ford rd,Dearborn heights\"",
-      "description": "16 likes, 0 comments - mr.sergiostore on March 2, 2024: \"“Curated elegance for every taste. Unveil the essence of fashion at [Mr.Sergio store]. Explore our collections and make every outfit a statement. #FashionUnveiled #mrsergio \n22732 ford rd,Dearborn heights\".",
-      "src": "/media/instagram/images/look-13.jpg"
-    },
-    {
-      "id": "ig-image-14",
-      "type": "image",
-      "postUrl": "https://www.instagram.com/reel/C3_vvTsrKCQ/",
-      "shortcode": "C3_vvTsrKCQ",
-      "title": "mr.sergio on Instagram",
-      "description": "8 likes, 0 comments - mr.sergiostore on March 1, 2024",
-      "src": "/media/instagram/images/look-14.jpg"
-    },
-    {
-      "id": "ig-image-15",
-      "type": "image",
-      "postUrl": "https://www.instagram.com/reel/C3tuSgkIaQ6/",
-      "shortcode": "C3tuSgkIaQ6",
-      "title": "mr.sergio on Instagram: \"“Style is a way to say who you are without having to speak.” - Rachel Zoe. Explore your identity through fashion at Mr.Sergio. 👕🗣️ #FashionQuotes #SignatureStyle”\n\n#explore #explorepage #viral #trending #trendingnow #gainpost #gain #gaintrick #gaintrain #gainfollowers #outfits #amazonfinds #outfitinspiration #outfitideas #outfitinspo #fashion #winteroutfit #melanin #winterfashion #nike #represent #telfar #postpage #baddies #followme #ootw #lanvin\"",
-      "description": "21 likes, 0 comments - mr.sergiostore on February 23, 2024: \"“Style is a way to say who you are without having to speak.” - Rachel Zoe. Explore your identity through fashion at Mr.Sergio. 👕🗣️ #FashionQuotes #SignatureStyle”\n\n#explore #explorepage #viral #trending #trendingnow #gainpost #gain #gaintrick #gaintrain #gainfollowers #outfits #amazonfinds #outfitinspiration #outfitideas #outfitinspo #fashion #winteroutfit #melanin #winterfashion #nike #represent #telfar #postpage #baddies #followme #ootw #lanvin\".",
-      "src": "/media/instagram/images/look-15.jpg"
-    },
-    {
       "id": "ig-image-16",
       "type": "image",
       "postUrl": "https://www.instagram.com/p/C3lYzGZLymW/",
@@ -613,15 +290,6 @@
       "title": "mr.sergio on Instagram",
       "description": "6 likes, 0 comments - mr.sergiostore on February 20, 2024",
       "src": "/media/instagram/images/look-17.jpg"
-    },
-    {
-      "id": "ig-image-18",
-      "type": "image",
-      "postUrl": "https://www.instagram.com/p/C3lYe9WrhcB/",
-      "shortcode": "C3lYe9WrhcB",
-      "title": "mr.sergio on Instagram",
-      "description": "3 likes, 0 comments - mr.sergiostore on February 20, 2024",
-      "src": "/media/instagram/images/look-18.jpg"
     },
     {
       "id": "ig-image-19",
@@ -660,33 +328,6 @@
       "src": "/media/instagram/images/look-22.jpg"
     },
     {
-      "id": "ig-image-23",
-      "type": "image",
-      "postUrl": "https://www.instagram.com/p/C3lXk5mLf01/",
-      "shortcode": "C3lXk5mLf01",
-      "title": "mr.sergio on Instagram",
-      "description": "8 likes, 0 comments - mr.sergiostore on February 20, 2024",
-      "src": "/media/instagram/images/look-23.jpg"
-    },
-    {
-      "id": "ig-image-24",
-      "type": "image",
-      "postUrl": "https://www.instagram.com/reel/C3lOZmHL3TZ/",
-      "shortcode": "C3lOZmHL3TZ",
-      "title": "mr.sergio on Instagram: \"Sale up to 50% on all winter collection 🔥🔥\"",
-      "description": "20 likes, 0 comments - mr.sergiostore on February 20, 2024: \"Sale up to 50% on all winter collection 🔥🔥\".",
-      "src": "/media/instagram/images/look-24.jpg"
-    },
-    {
-      "id": "ig-image-25",
-      "type": "image",
-      "postUrl": "https://www.instagram.com/reel/C3YVoVrLTx2/",
-      "shortcode": "C3YVoVrLTx2",
-      "title": "mr.sergio on Instagram",
-      "description": "18 likes, 0 comments - mr.sergiostore on February 15, 2024",
-      "src": "/media/instagram/images/look-25.jpg"
-    },
-    {
       "id": "ig-image-26",
       "type": "image",
       "postUrl": "https://www.instagram.com/reel/C3WK3fbrgyj/",
@@ -696,42 +337,6 @@
       "src": "/media/instagram/images/look-26.jpg"
     },
     {
-      "id": "ig-image-27",
-      "type": "image",
-      "postUrl": "https://www.instagram.com/reel/C3BpzuiLW4-/",
-      "shortcode": "C3BpzuiLW4-",
-      "title": "mr.sergio on Instagram",
-      "description": "14 likes, 0 comments - mr.sergiostore on February 6, 2024",
-      "src": "/media/instagram/images/look-27.jpg"
-    },
-    {
-      "id": "ig-image-28",
-      "type": "image",
-      "postUrl": "https://www.instagram.com/p/C2-pKksPTqq/",
-      "shortcode": "C2-pKksPTqq",
-      "title": "mr.sergio on Instagram: \"Are you ready?🔥join us for our grand opening on Feb/8 at 3:00 pm and enjoy 30% off everything 🔥🔥😍\n#grandopening #mrsergio #dearborn #michigan\"",
-      "description": "13 likes, 1 comments - mr.sergiostore on February 5, 2024: \"Are you ready?🔥join us for our grand opening on Feb/8 at 3:00 pm and enjoy 30% off everything 🔥🔥😍\n#grandopening #mrsergio #dearborn #michigan\".",
-      "src": "/media/instagram/images/look-28.jpg"
-    },
-    {
-      "id": "ig-image-29",
-      "type": "image",
-      "postUrl": "https://www.instagram.com/reel/C20nxhnrs0G/",
-      "shortcode": "C20nxhnrs0G",
-      "title": "mr.sergio on Instagram: \"Are you ready?🔥join us for our grand opening on Feb/8 and enjoy 30% off everything 🔥🔥😍\n#grandopening #mrsergio #dearborn #michigan\"",
-      "description": "9 likes, 0 comments - mr.sergiostore on February 1, 2024: \"Are you ready?🔥join us for our grand opening on Feb/8 and enjoy 30% off everything 🔥🔥😍\n#grandopening #mrsergio #dearborn #michigan\".",
-      "src": "/media/instagram/images/look-29.jpg"
-    },
-    {
-      "id": "ig-image-30",
-      "type": "image",
-      "postUrl": "https://www.instagram.com/p/C20KbrNrVlz/",
-      "shortcode": "C20KbrNrVlz",
-      "title": "mr.sergio on Instagram: \"Out fit of the day 😎\"",
-      "description": "13 likes, 0 comments - mr.sergiostore on February 1, 2024: \"Out fit of the day 😎\".",
-      "src": "/media/instagram/images/look-30.jpg"
-    },
-    {
       "id": "ig-image-31",
       "type": "image",
       "postUrl": "https://www.instagram.com/reel/C20J6Ivr497/",
@@ -739,15 +344,6 @@
       "title": "mr.sergio on Instagram: \"No caption 🎶\"",
       "description": "22 likes, 0 comments - mr.sergiostore on February 1, 2024: \"No caption 🎶\".",
       "src": "/media/instagram/images/look-31.jpg"
-    },
-    {
-      "id": "ig-image-32",
-      "type": "image",
-      "postUrl": "https://www.instagram.com/reel/C20IAmxrN2Z/",
-      "shortcode": "C20IAmxrN2Z",
-      "title": "mr.sergio on Instagram: \"Ready for valentine collection 🔥❤️\"",
-      "description": "14 likes, 1 comments - mr.sergiostore on February 1, 2024: \"Ready for valentine collection 🔥❤️\".",
-      "src": "/media/instagram/images/look-32.jpg"
     }
   ]
 }
