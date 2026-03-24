@@ -352,6 +352,13 @@ export const mediaFallbackNotes = {
   body: "This build includes a premium placeholder gallery plus one verified public brand asset. Replace placeholders with business-owned photos/videos in /public/media as soon as approved media is supplied.",
 };
 
+export const instagramCinematic = {
+  profileEmbedUrl: "https://www.instagram.com/mr.sergiostore/embed/",
+  profileUrl: "https://www.instagram.com/mr.sergiostore/",
+  note:
+    "Public profile embed is live. For post-specific reel embeds, add approved reel URLs in this content file when available.",
+};
+
 export function getProductBySlug(slug: string) {
   return products.find((product) => product.slug === slug);
 }

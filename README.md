@@ -85,6 +85,8 @@ npm run build
 
 - Placeholder and editorial slot assets live under `public/media`
 - Brand crest is stored at `public/media/brand/mr-sergio-crest.jpg`
+- Homepage includes a cinematic live Instagram profile embed sourced from `@mr.sergiostore`
+- Configure Instagram embed source in `lib/site-data.ts` (`instagramCinematic`)
 - See:
   - `MEDIA_MANIFEST.md`
   - `public/media/README.md`

@@ -7,6 +7,7 @@ import { Reveal } from "@/components/ui/reveal";
 import { SectionTitle } from "@/components/ui/section-title";
 import {
   business,
+  instagramCinematic,
   lookbookFrames,
   products,
   reviewHighlights,
@@ -95,6 +96,55 @@ export default function HomePage() {
             </div>
           </Reveal>
         </div>
+      </section>
+
+      <section className="seam-divider space-y-8">
+        <SectionTitle
+          eyebrow="Cinematic Feed"
+          title="Instagram Motion, Styled As Editorial Film"
+          description="Live account embed from @mr.sergiostore presented in a cinematic frame treatment while preserving the core Mr. Sergio design direction."
+        />
+        <Reveal className="cinematic-shell p-5 md:p-7">
+          <div className="grid gap-5 lg:grid-cols-[0.95fr_1.05fr]">
+            <div className="space-y-5">
+              <p className="text-xs uppercase tracking-[0.3em] text-[var(--accent)]">
+                Live From Instagram
+              </p>
+              <h3 className="font-display text-balance text-3xl text-[var(--paper)] md:text-5xl">
+                Runway Energy, Directly From The Account.
+              </h3>
+              <p className="text-sm leading-relaxed text-[var(--muted)] md:text-base">
+                This cinematic module uses the account&apos;s public Instagram embed source so visitors can move from visual inspiration straight into inquiry.
+              </p>
+              <p className="text-xs leading-relaxed text-[var(--muted)]/80">
+                {instagramCinematic.note}
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link
+                  href={instagramCinematic.profileUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="button-ghost"
+                >
+                  Open Instagram
+                </Link>
+                <Link href="/custom-suits" className="button-primary">
+                  Start Custom Fit
+                </Link>
+              </div>
+            </div>
+
+            <div className="cinematic-rail min-h-[560px]">
+              <iframe
+                title="Mr Sergio Instagram cinematic embed"
+                src={instagramCinematic.profileEmbedUrl}
+                loading="lazy"
+                className="cinematic-iframe"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
+              />
+            </div>
+          </div>
+        </Reveal>
       </section>
 
       <section className="space-y-10 seam-divider">
