@@ -15,13 +15,21 @@ import {
 } from "@/lib/site-data";
 
 const featured = products.filter((item) => item.featured).slice(0, 3);
-const heroVideo = instagramCinematic.videos[0];
-const cinematicStills = instagramCinematic.stills.slice(0, 8);
+const cinematicHeroImage = instagramCinematic.stills[0];
+const cinematicStills = instagramCinematic.stills.slice(1, 9);
+const runwayTicker = [
+  "Tailored Presence",
+  "Black-Tie Precision",
+  "Wedding Ready",
+  "Prom Statement",
+  "Modern Menswear",
+  "In-Store Styling",
+];
 
 export default function HomePage() {
   return (
     <div className="space-y-24 pb-12 md:space-y-32">
-      <section className="section-frame overflow-hidden p-7 md:p-12">
+      <section className="section-frame hero-atmosphere overflow-hidden p-7 md:p-12">
         <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
           <Reveal className="space-y-8">
             <div className="space-y-5">
@@ -46,21 +54,21 @@ export default function HomePage() {
             </div>
 
             <div className="grid gap-4 text-sm text-[var(--muted)] sm:grid-cols-3">
-              <div className="rounded-xl border border-[var(--line-soft)] bg-[rgba(8,10,13,0.36)] p-4">
+              <div className="hero-stat-card rounded-xl border border-[var(--line-soft)] bg-[rgba(8,10,13,0.36)] p-4">
                 <p className="text-[10px] uppercase tracking-[0.26em]">Instagram</p>
                 <p className="mt-2 font-display text-2xl text-[var(--paper)]">
                   {business.profileSnapshot.followersLabel}
                 </p>
                 <p className="text-xs">Followers</p>
               </div>
-              <div className="rounded-xl border border-[var(--line-soft)] bg-[rgba(8,10,13,0.36)] p-4">
+              <div className="hero-stat-card rounded-xl border border-[var(--line-soft)] bg-[rgba(8,10,13,0.36)] p-4">
                 <p className="text-[10px] uppercase tracking-[0.26em]">Catalog</p>
                 <p className="mt-2 font-display text-2xl text-[var(--paper)]">
                   {products.length}
                 </p>
                 <p className="text-xs">Style directions</p>
               </div>
-              <div className="rounded-xl border border-[var(--line-soft)] bg-[rgba(8,10,13,0.36)] p-4">
+              <div className="hero-stat-card rounded-xl border border-[var(--line-soft)] bg-[rgba(8,10,13,0.36)] p-4">
                 <p className="text-[10px] uppercase tracking-[0.26em]">Profile</p>
                 <p className="mt-2 font-display text-2xl text-[var(--paper)]">{business.profileSnapshot.postsLabel}</p>
                 <p className="text-xs">Public posts</p>
@@ -69,7 +77,7 @@ export default function HomePage() {
           </Reveal>
 
           <Reveal className="relative" delayMs={140}>
-            <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[1.4rem] border border-[var(--line)] bg-[radial-gradient(circle_at_70%_15%,rgba(255,255,255,0.22),transparent_30%),linear-gradient(145deg,#1a2029,#0f141b_60%,#1b1f25)] p-6">
+            <div className="crest-shell relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[1.4rem] border border-[var(--line)] bg-[radial-gradient(circle_at_70%_15%,rgba(255,255,255,0.22),transparent_30%),linear-gradient(145deg,#1a2029,#0f141b_60%,#1b1f25)] p-6">
               <div className="absolute -right-24 top-8 h-40 w-40 rotate-12 border border-[var(--line)]" />
               <div className="absolute -left-20 bottom-12 h-48 w-48 -rotate-6 border border-[var(--line-soft)]" />
               <div className="relative h-full rounded-2xl border border-[var(--line-soft)] bg-[rgba(7,9,13,0.64)] p-6">
@@ -97,6 +105,15 @@ export default function HomePage() {
               </div>
             </div>
           </Reveal>
+        </div>
+        <div className="runway-ticker mt-10">
+          <div className="runway-track">
+            {[...runwayTicker, ...runwayTicker].map((item, index) => (
+              <span key={`${item}-${index}`} className="runway-chip">
+                {item}
+              </span>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -133,35 +150,22 @@ export default function HomePage() {
 
             <div className="space-y-3">
               <div className="cinematic-rail min-h-[560px]">
-                {heroVideo ? (
-                  <video
-                    key={heroVideo.src}
-                    className="cinematic-video"
-                    src={heroVideo.src}
-                    poster={heroVideo.poster}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
-                  />
-                ) : (
-                  <Image
-                    src={cinematicStills[0]?.src ?? "/media/brand/mr-sergio-crest.jpg"}
-                    alt="Mr Sergio cinematic still"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 52vw"
-                    className="object-cover"
-                  />
-                )}
+                <Image
+                  src={cinematicHeroImage?.src ?? "/media/brand/mr-sergio-crest.jpg"}
+                  alt="Mr Sergio cinematic hero image"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 52vw"
+                  className="cinematic-hero-image object-cover"
+                />
                 <div className="cinematic-film-overlay" />
               </div>
 
               <div className="grid grid-cols-4 gap-2">
-                {cinematicStills.map((still) => (
+                {cinematicStills.map((still, index) => (
                   <div
                     key={still.src}
-                    className="relative aspect-square overflow-hidden rounded-lg border border-[var(--line-soft)]"
+                    className="still-tile relative aspect-square overflow-hidden rounded-lg border border-[var(--line-soft)]"
+                    style={{ animationDelay: `${index * 90}ms` }}
                   >
                     <Image
                       src={still.src}

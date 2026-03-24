@@ -5,15 +5,16 @@ import type { Product } from "@/lib/site-data";
 
 export function ProductCard({ product }: { product: Product }) {
   return (
-    <article className="group overflow-hidden rounded-2xl border border-[var(--line-soft)] bg-[var(--surface-2)]/80 backdrop-blur">
+    <article className="product-card group overflow-hidden rounded-2xl border border-[var(--line-soft)] bg-[var(--surface-2)]/80 backdrop-blur">
       <div className="relative aspect-[3/4] overflow-hidden">
         <Image
           src={product.images[0]}
           alt={product.name}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover transition-transform duration-700 group-hover:scale-105"
+          className="object-cover transition-transform duration-700 group-hover:scale-110"
         />
+        <div className="product-card-sheen" />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(9,11,14,0.0)_48%,rgba(9,11,14,0.72)_100%)]" />
         <div className="absolute right-4 top-4 rounded-full border border-[var(--line)] bg-[rgba(10,12,16,0.72)] px-3 py-1 text-[11px] uppercase tracking-[0.25em] text-[var(--paper)]">
           {product.priceRange}
