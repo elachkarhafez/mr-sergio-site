@@ -392,6 +392,58 @@ textarea {
     inset 0 0 0 12px rgba(244, 220, 181, 0.34);
 }
 
+.product-wood-frame {
+  position: relative;
+  border-radius: 1rem;
+  border: 1px solid rgba(116, 78, 34, 0.5);
+  background:
+    linear-gradient(138deg, rgba(236, 192, 126, 0.96), rgba(201, 146, 68, 0.98)),
+    repeating-linear-gradient(
+      90deg,
+      rgba(119, 76, 32, 0.22) 0 1px,
+      rgba(0, 0, 0, 0) 1px 9px
+    );
+  box-shadow:
+    0 14px 26px rgba(110, 72, 26, 0.24),
+    inset 0 0 0 1px rgba(255, 244, 224, 0.55);
+}
+
+.product-wood-frame::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border-radius: 0.8rem;
+  border: 1px solid rgba(125, 85, 40, 0.62);
+  pointer-events: none;
+}
+
+.product-wood-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  pointer-events: none;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 245, 228, 0.42),
+    rgba(255, 245, 228, 0) 35%,
+    rgba(76, 43, 12, 0.1) 100%
+  );
+}
+
+.product-wood-frame-thick {
+  border-radius: 1.2rem;
+  box-shadow:
+    0 16px 30px rgba(102, 66, 23, 0.26),
+    inset 0 0 0 1px rgba(255, 247, 233, 0.6),
+    inset 0 0 0 12px rgba(180, 125, 54, 0.22);
+}
+
+.product-wood-frame-thick::before {
+  inset: 8px;
+  border-radius: 0.95rem;
+}
+
 .tailor-spotlight {
   position: absolute;
   inset: -40% -20%;

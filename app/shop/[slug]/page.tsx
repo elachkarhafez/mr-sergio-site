@@ -50,29 +50,30 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
       <section className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
         <Reveal className="section-frame p-4 md:p-5">
           <div className="grid gap-4 md:grid-cols-2">
-            <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-[var(--line-soft)] md:col-span-2">
-              <Image
-                src={product.images[0]}
-                alt={`${product.name} primary image`}
-                fill
-                sizes="(max-width: 1024px) 100vw, 65vw"
-                className="object-cover"
-                priority
-              />
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.0)_42%,rgba(35,24,10,0.35)_100%)]" />
+            <div className="product-wood-frame product-wood-frame-thick p-3 md:col-span-2">
+              <div className="relative aspect-[3/4] overflow-hidden rounded-xl">
+                <Image
+                  src={product.images[0]}
+                  alt={`${product.name} primary image`}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 65vw"
+                  className="object-cover"
+                  priority
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.0)_42%,rgba(35,24,10,0.35)_100%)]" />
+              </div>
             </div>
             {product.images.slice(1).map((image, idx) => (
-              <div
-                key={image}
-                className="relative aspect-[4/5] overflow-hidden rounded-xl border border-[var(--line-soft)]"
-              >
-                <Image
-                  src={image}
-                  alt={`${product.name} gallery image ${idx + 2}`}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 30vw"
-                  className="object-cover"
-                />
+              <div key={image} className="product-wood-frame p-2">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-xl">
+                  <Image
+                    src={image}
+                    alt={`${product.name} gallery image ${idx + 2}`}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 30vw"
+                    className="object-cover"
+                  />
+                </div>
               </div>
             ))}
           </div>
