@@ -18,10 +18,10 @@ export function SiteHeader() {
   const pathname = usePathname();
 
   return (
-    <header className="site-header sticky top-0 z-40 border-b border-[var(--line-soft)] bg-[rgba(8,10,13,0.72)] backdrop-blur-xl">
+    <header className="site-header sticky top-0 z-40 border-b border-[var(--line-soft)] bg-[rgba(255,250,242,0.9)] backdrop-blur-xl">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
         <Link href="/" className="site-brand group inline-flex items-center gap-3">
-          <span className="text-xs uppercase tracking-[0.32em] text-[var(--paper)]">
+          <span className="text-xs uppercase tracking-[0.32em] text-[var(--ink)]">
             {business.name}
           </span>
           <span className="hidden h-[1px] w-10 bg-[var(--accent)] opacity-70 transition-all duration-300 group-hover:w-14 md:block" />
@@ -36,7 +36,7 @@ export function SiteHeader() {
                 key={link.href}
                 href={link.href}
                 className={`site-nav-link text-[11px] uppercase tracking-[0.28em] transition-colors ${
-                  active ? "text-[var(--paper)]" : "text-[var(--muted)] hover:text-[var(--paper)]"
+                  active ? "text-[var(--ink)]" : "text-[var(--muted)] hover:text-[var(--ink)]"
                 }`}
               >
                 {link.label}
@@ -55,16 +55,16 @@ export function SiteHeader() {
         </div>
 
         <details className="group relative lg:hidden">
-          <summary className="list-none rounded-full border border-[var(--line)] px-4 py-2 text-[11px] uppercase tracking-[0.25em] text-[var(--paper)]">
+          <summary className="list-none rounded-full border border-[var(--line)] px-4 py-2 text-[11px] uppercase tracking-[0.25em] text-[var(--ink)]">
             Menu
           </summary>
-          <div className="absolute right-0 mt-3 min-w-[220px] overflow-hidden rounded-xl border border-[var(--line-soft)] bg-[rgba(10,12,16,0.95)] p-3 shadow-2xl">
+          <div className="absolute right-0 mt-3 min-w-[220px] overflow-hidden rounded-xl border border-[var(--line-soft)] bg-[rgba(255,250,242,0.98)] p-3 shadow-xl">
             <nav className="flex flex-col gap-2">
               {links.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="rounded-md px-3 py-2 text-xs uppercase tracking-[0.22em] text-[var(--muted)] transition-colors hover:bg-[rgba(255,255,255,0.06)] hover:text-[var(--paper)]"
+                  className="rounded-md px-3 py-2 text-xs uppercase tracking-[0.22em] text-[var(--muted)] transition-colors hover:bg-[rgba(199,154,71,0.1)] hover:text-[var(--ink)]"
                 >
                   {link.label}
                 </Link>

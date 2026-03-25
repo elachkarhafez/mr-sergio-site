@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { ProductInquiryForm } from "@/components/forms/product-inquiry-form";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionTitle } from "@/components/ui/section-title";
 import { business, weeklyHours } from "@/lib/site-data";
@@ -9,8 +8,12 @@ import { business, weeklyHours } from "@/lib/site-data";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Visit Mr. Sergio in Dearborn Heights, call, or send an inquiry for product and custom suit requests.",
+    "Visit Mr. Sergio in Dearborn Heights, call, or send a text for merchandise availability and custom suit requests.",
 };
+
+const generalTextMessage = encodeURIComponent(
+  "Hi Mr. Sergio, I would like help with a style recommendation and availability check.",
+);
 
 export default function ContactPage() {
   const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(
@@ -22,26 +25,26 @@ export default function ContactPage() {
       <section className="section-frame p-7 md:p-10">
         <SectionTitle
           eyebrow="Contact / Visit"
-          title="Plan Your Visit Or Request A Callback"
-          description="Use the inquiry form for product requests, event timelines, or styling help."
+          title="Call Or Text For Fast Availability Help"
+          description="No online checkout is enabled. Share what you need by phone or text and the team will guide sizing, color, and fit options."
         />
       </section>
 
       <section className="grid gap-6 lg:grid-cols-[1fr_1fr]">
         <Reveal className="section-frame p-6 md:p-8">
-          <h2 className="font-display text-4xl text-[var(--paper)]">Store Information</h2>
+          <h2 className="font-display text-4xl text-[var(--ink)]">Store Information</h2>
           <div className="mt-5 space-y-3 text-sm text-[var(--muted)]">
             <p>{business.addressLine}</p>
             <p>
               Phone: <Link href={`tel:${business.phoneHref}`}>{business.phoneDisplay}</Link>
             </p>
             <p>
-              Instagram: {" "}
+              Instagram:{" "}
               <Link
                 href={business.instagramUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="text-[var(--paper)] hover:text-[var(--accent)]"
+                className="text-[var(--ink)] hover:text-[var(--accent)]"
               >
                 {business.instagramHandle}
               </Link>
@@ -49,15 +52,22 @@ export default function ContactPage() {
           </div>
 
           <div className="mt-8 space-y-2 text-sm text-[var(--muted)]">
-            <p className="text-xs uppercase tracking-[0.22em] text-[var(--paper)]">
-              Hours
-            </p>
+            <p className="text-xs uppercase tracking-[0.22em] text-[var(--ink)]">Hours</p>
             {weeklyHours.map((entry) => (
               <p key={entry.day} className="flex items-center justify-between gap-3">
                 <span>{entry.day}</span>
                 <span>{entry.hours}</span>
               </p>
             ))}
+          </div>
+
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link href={`tel:${business.phoneHref}`} className="button-ghost">
+              Call Store
+            </Link>
+            <a href={`sms:${business.phoneHref}?body=${generalTextMessage}`} className="button-primary">
+              Text Store
+            </a>
           </div>
         </Reveal>
 
@@ -73,14 +83,6 @@ export default function ContactPage() {
           </div>
         </Reveal>
       </section>
-
-      <section className="seam-divider">
-        <Reveal>
-          <ProductInquiryForm title="General Inquiry / Appointment Request" compact />
-        </Reveal>
-      </section>
     </div>
   );
 }
-
-

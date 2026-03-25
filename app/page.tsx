@@ -1,285 +1,186 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 
-import { LookFrame } from "@/components/ui/look-frame";
 import { ProductCard } from "@/components/ui/product-card";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionTitle } from "@/components/ui/section-title";
-import {
-  business,
-  instagramCinematic,
-  lookbookFrames,
-  products,
-  reviewHighlights,
-  whyChoose,
-} from "@/lib/site-data";
+import { business, categoryDetails, products, whyChoose } from "@/lib/site-data";
 
-const featured = products.filter((item) => item.featured).slice(0, 3);
-const cinematicHeroImage = instagramCinematic.stills[0];
-const cinematicStills = instagramCinematic.stills.slice(1, 9);
-const runwayTicker = [
-  "Tailored Presence",
-  "Black-Tie Precision",
-  "Wedding Ready",
-  "Prom Statement",
-  "Modern Menswear",
-  "In-Store Styling",
-];
+const featured = products.slice(0, 6);
+const heroImage = products[0]?.images[0] ?? "/media/brand/mr-sergio-crest.jpg";
+
+const casualCategories = Array.from(
+  new Set(products.filter((item) => item.styleType === "casual").map((item) => item.category)),
+);
+const dressyCategories = Array.from(
+  new Set(products.filter((item) => item.styleType === "dressy").map((item) => item.category)),
+);
 
 export default function HomePage() {
   return (
-    <div className="space-y-24 pb-12 md:space-y-32">
+    <div className="space-y-20 pb-12 md:space-y-24">
       <section className="section-frame hero-atmosphere overflow-hidden p-7 md:p-12">
-        <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
-          <Reveal className="space-y-8">
-            <div className="space-y-5">
-              <p className="text-xs uppercase tracking-[0.35em] text-[var(--accent)]">
-                Dearborn Heights Menswear
-              </p>
-              <h1 className="hero-headline text-[var(--paper)]">
-                Dress Like The Room Was Waiting For You.
-              </h1>
-              <p className="max-w-xl text-pretty text-base leading-relaxed text-[var(--muted)] md:text-lg">
-                Mr. Sergio delivers premium formalwear, sharp suits, and complete event styling with boutique-level attention. Wedding, prom, and occasion looks are built to feel tailored, polished, and unmistakably confident.
-              </p>
-            </div>
+        <div className="grid gap-8 lg:grid-cols-[1fr_0.95fr] lg:items-center">
+          <Reveal className="space-y-6">
+            <p className="text-xs uppercase tracking-[0.35em] text-[var(--accent)]">
+              Dearborn Heights Menswear
+            </p>
+            <h1 className="hero-headline text-[var(--ink)]">
+              Premium Looks, Simple Shopping.
+            </h1>
+            <p className="max-w-xl text-pretty text-base leading-relaxed text-[var(--muted)] md:text-lg">
+              Browse merchandise in two clean lanes: Casual or Dressy. Pick a category, view
+              details, then text your style, size, and color for fast availability.
+            </p>
 
             <div className="flex flex-wrap gap-3">
-              <Link href="/shop" className="button-primary">
-                Shop Looks
+              <Link href="/shop?style=casual" className="button-ghost">
+                Shop Casual
+              </Link>
+              <Link href="/shop?style=dressy" className="button-primary">
+                Shop Dressy
               </Link>
               <Link href="/custom-suits" className="button-ghost">
-                Custom Suit Inquiry
+                Custom Suits
               </Link>
             </div>
 
             <div className="grid gap-4 text-sm text-[var(--muted)] sm:grid-cols-3">
-              <div className="hero-stat-card rounded-xl border border-[var(--line-soft)] bg-[rgba(8,10,13,0.36)] p-4">
-                <p className="text-[10px] uppercase tracking-[0.26em]">Instagram</p>
-                <p className="mt-2 font-display text-2xl text-[var(--paper)]">
+              <div className="hero-stat-card rounded-xl border border-[var(--line-soft)] bg-white p-4">
+                <p className="text-[10px] uppercase tracking-[0.26em]">Followers</p>
+                <p className="mt-2 font-display text-2xl text-[var(--ink)]">
                   {business.profileSnapshot.followersLabel}
                 </p>
-                <p className="text-xs">Followers</p>
+                <p className="text-xs">Instagram</p>
               </div>
-              <div className="hero-stat-card rounded-xl border border-[var(--line-soft)] bg-[rgba(8,10,13,0.36)] p-4">
-                <p className="text-[10px] uppercase tracking-[0.26em]">Catalog</p>
-                <p className="mt-2 font-display text-2xl text-[var(--paper)]">
-                  {products.length}
-                </p>
-                <p className="text-xs">Style directions</p>
+              <div className="hero-stat-card rounded-xl border border-[var(--line-soft)] bg-white p-4">
+                <p className="text-[10px] uppercase tracking-[0.26em]">Merchandise</p>
+                <p className="mt-2 font-display text-2xl text-[var(--ink)]">{products.length}</p>
+                <p className="text-xs">Current styles</p>
               </div>
-              <div className="hero-stat-card rounded-xl border border-[var(--line-soft)] bg-[rgba(8,10,13,0.36)] p-4">
-                <p className="text-[10px] uppercase tracking-[0.26em]">Profile</p>
-                <p className="mt-2 font-display text-2xl text-[var(--paper)]">{business.profileSnapshot.postsLabel}</p>
-                <p className="text-xs">Public posts</p>
+              <div className="hero-stat-card rounded-xl border border-[var(--line-soft)] bg-white p-4">
+                <p className="text-[10px] uppercase tracking-[0.26em]">Shipping</p>
+                <p className="mt-2 font-display text-2xl text-[var(--ink)]">Free</p>
+                <p className="text-xs">On items over $100</p>
               </div>
             </div>
           </Reveal>
 
-          <Reveal className="relative" delayMs={140}>
-            <div className="crest-shell relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[1.4rem] border border-[var(--line)] bg-[radial-gradient(circle_at_70%_15%,rgba(255,255,255,0.22),transparent_30%),linear-gradient(145deg,#1a2029,#0f141b_60%,#1b1f25)] p-6">
-              <div className="absolute -right-24 top-8 h-40 w-40 rotate-12 border border-[var(--line)]" />
-              <div className="absolute -left-20 bottom-12 h-48 w-48 -rotate-6 border border-[var(--line-soft)]" />
-              <div className="relative h-full rounded-2xl border border-[var(--line-soft)] bg-[rgba(7,9,13,0.64)] p-6">
-                <p className="text-[10px] uppercase tracking-[0.3em] text-[var(--muted)]">
-                  Brand Crest
+          <Reveal delayMs={120}>
+            <div className="wood-frame relative aspect-[4/5] overflow-hidden rounded-2xl">
+              <Image
+                src={heroImage}
+                alt="Mr. Sergio featured style"
+                fill
+                sizes="(max-width: 1024px) 100vw, 48vw"
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.05)_40%,rgba(44,29,10,0.48)_100%)]" />
+              <div className="tailor-spotlight" aria-hidden />
+              <div className="absolute bottom-5 left-5 right-5 rounded-xl border border-[rgba(255,255,255,0.34)] bg-[rgba(255,255,255,0.82)] p-4 backdrop-blur">
+                <p className="text-[10px] uppercase tracking-[0.24em] text-[var(--accent)]">
+                  Fast Flow
                 </p>
-                <div className="relative mt-6 aspect-square w-28 overflow-hidden rounded-full border border-[var(--line)] bg-[rgba(255,255,255,0.92)] p-2">
-                  <Image
-                    src="/media/brand/mr-sergio-crest.jpg"
-                    alt="Mr. Sergio crest"
-                    fill
-                    sizes="112px"
-                    className="object-cover"
-                  />
-                </div>
-                <div className="mt-8 space-y-3 text-sm text-[var(--muted)]">
-                  <p className="text-xs uppercase tracking-[0.25em] text-[var(--accent)]">
-                    Signature Direction
-                  </p>
-                  <p>Monochrome luxury palette, formalwear focus, and editorial tailoring cues inspired by the brand&apos;s public identity.</p>
-                  <p className="text-xs text-[var(--muted)]/80">
-                    Source snapshot: {business.profileSnapshot.sourceDate}
-                  </p>
-                </div>
+                <p className="mt-1 text-sm text-[var(--muted)]">
+                  Choose lane, choose category, text availability.
+                </p>
               </div>
             </div>
           </Reveal>
-        </div>
-        <div className="runway-ticker mt-10">
-          <div className="runway-track">
-            {[...runwayTicker, ...runwayTicker].map((item, index) => (
-              <span key={`${item}-${index}`} className="runway-chip">
-                {item}
-              </span>
-            ))}
-          </div>
         </div>
       </section>
 
       <section className="seam-divider space-y-8">
         <SectionTitle
-          eyebrow="Cinematic Feed"
-          title="Instagram Motion, Styled As Editorial Film"
-          description="Downloaded reels and curated stills from @mr.sergiostore, art-directed into a cinematic module while preserving the site's premium visual language."
+          eyebrow="Shop Lanes"
+          title="Choose Your Style Lane First"
+          description="A clear split keeps browsing simple for customers and directs them straight to the right merchandise."
         />
-        <Reveal className="cinematic-shell p-5 md:p-7">
-          <div className="grid gap-5 lg:grid-cols-[0.95fr_1.05fr]">
-            <div className="space-y-5">
-              <p className="text-xs uppercase tracking-[0.3em] text-[var(--accent)]">
-                Live From Instagram
-              </p>
-              <h3 className="font-display text-balance text-3xl text-[var(--paper)] md:text-5xl">
-                Runway Energy, Directly From The Account.
-              </h3>
-              <p className="text-sm leading-relaxed text-[var(--muted)] md:text-base">
-                This cinematic module is built from downloaded and locally hosted business media, so visitors move from real looks to inquiry in one seamless flow.
-              </p>
-              <p className="text-xs leading-relaxed text-[var(--muted)]/80">
-                {instagramCinematic.note}
-              </p>
-              <div className="flex flex-wrap gap-3">
-                <Link href="/lookbook" className="button-ghost">
-                  Open Lookbook
+        <div className="grid gap-6 md:grid-cols-2">
+          <Reveal className="section-frame p-6">
+            <p className="text-xs uppercase tracking-[0.28em] text-[var(--accent)]">Casual</p>
+            <h3 className="mt-2 font-display text-3xl text-[var(--ink)]">Everyday Polish</h3>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {casualCategories.map((category) => (
+                <Link
+                  key={category}
+                  href={`/shop?style=casual&category=${category}`}
+                  className="rounded-full border border-[var(--line)] bg-white px-3 py-1 text-[11px] uppercase tracking-[0.2em] text-[var(--muted)] transition hover:border-[var(--accent)] hover:text-[var(--ink)]"
+                >
+                  {categoryDetails[category].label}
                 </Link>
-                <Link href="/custom-suits" className="button-primary">
-                  Start Custom Fit
+              ))}
+            </div>
+            <Link href="/shop?style=casual" className="button-ghost mt-6">
+              Open Casual Lane
+            </Link>
+          </Reveal>
+
+          <Reveal className="section-frame p-6" delayMs={100}>
+            <p className="text-xs uppercase tracking-[0.28em] text-[var(--accent)]">Dressy</p>
+            <h3 className="mt-2 font-display text-3xl text-[var(--ink)]">Formal Precision</h3>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {dressyCategories.map((category) => (
+                <Link
+                  key={category}
+                  href={`/shop?style=dressy&category=${category}`}
+                  className="rounded-full border border-[var(--line)] bg-white px-3 py-1 text-[11px] uppercase tracking-[0.2em] text-[var(--muted)] transition hover:border-[var(--accent)] hover:text-[var(--ink)]"
+                >
+                  {categoryDetails[category].label}
                 </Link>
-              </div>
+              ))}
             </div>
-
-            <div className="space-y-3">
-              <div className="cinematic-rail min-h-[560px]">
-                <Image
-                  src={cinematicHeroImage?.src ?? "/media/brand/mr-sergio-crest.jpg"}
-                  alt="Mr Sergio cinematic hero image"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 52vw"
-                  className="cinematic-hero-image object-cover"
-                />
-                <div className="cinematic-film-overlay" />
-              </div>
-
-              <div className="grid grid-cols-4 gap-2">
-                {cinematicStills.map((still, index) => (
-                  <div
-                    key={still.src}
-                    className="still-tile relative aspect-square overflow-hidden rounded-lg border border-[var(--line-soft)]"
-                    style={{ animationDelay: `${index * 90}ms` }}
-                  >
-                    <Image
-                      src={still.src}
-                      alt={still.label}
-                      fill
-                      sizes="(max-width: 1024px) 25vw, 12vw"
-                      className="object-cover transition-transform duration-500 hover:scale-105"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </Reveal>
+            <Link href="/shop?style=dressy" className="button-primary mt-6">
+              Open Dressy Lane
+            </Link>
+          </Reveal>
+        </div>
       </section>
 
-      <section className="space-y-10 seam-divider">
+      <section className="seam-divider space-y-10">
         <SectionTitle
-          eyebrow="Featured Looks"
-          title="Built For Weddings, Prom, And Statement Evenings"
-          description="A curated selection from Mr. Sergio's style direction. Inventory evolves in-store, and inquiries can reserve the closest available match."
+          eyebrow="Featured Merchandise"
+          title="Current Looks In Store"
+          description="Products are shown for browsing only. Open any item to text style, size, and color for availability."
         />
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {featured.map((product, index) => (
-            <Reveal key={product.slug} delayMs={index * 100}>
+            <Reveal key={product.slug} delayMs={index * 80}>
               <ProductCard product={product} />
             </Reveal>
           ))}
         </div>
       </section>
 
-      <section className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-        <Reveal className="section-frame p-7 md:p-10">
-          <SectionTitle
-            eyebrow="Brand Story"
-            title="Local Boutique Service, Elevated Presentation"
-            description="Mr. Sergio is positioned as a modern menswear destination where complete looks are styled with intent, from sharp daily dressing to black-tie events."
-          />
-          <p className="mt-6 max-w-2xl text-sm leading-relaxed text-[var(--muted)]">
-            Public customer feedback consistently highlights quality, helpful service, and strong formalwear options. The site direction mirrors that: confident typography, refined movement, and a styling-first shopping flow.
-          </p>
-        </Reveal>
-
-        <div className="grid gap-4">
-          {whyChoose.map((item, index) => (
-            <Reveal
-              key={item.title}
-              delayMs={80 * index}
-              className="section-frame p-6"
-            >
-              <p className="text-xs uppercase tracking-[0.28em] text-[var(--accent)]">
-                Why Mr. Sergio
-              </p>
-              <h3 className="mt-3 font-display text-2xl text-[var(--paper)]">{item.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-[var(--muted)]">{item.body}</p>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      <section className="space-y-10 seam-divider">
-        <SectionTitle
-          eyebrow="Social Proof"
-          title="What Customers Notice First"
-          description="Public review excerpts indicate quality styling, broad formalwear options, and friendly in-store help."
-        />
-
-        <div className="grid gap-5 md:grid-cols-3">
-          {reviewHighlights.map((review, index) => (
-            <Reveal key={review.quote} delayMs={index * 120}>
-              <blockquote className="section-frame h-full p-6">
-                <p className="text-sm leading-relaxed text-[var(--paper)]">
-                  &ldquo;{review.quote}&rdquo;
-                </p>
-                <footer className="mt-5 text-xs uppercase tracking-[0.22em] text-[var(--muted)]">
-                  {review.author} - {review.date}
-                </footer>
-              </blockquote>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      <section className="space-y-10 seam-divider">
-        <SectionTitle
-          eyebrow="Gallery Highlights"
-          title="Editorial Preview"
-          description="Recent Instagram visuals from the business account presented in an editorial grid treatment."
-        />
-
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {lookbookFrames.slice(0, 6).map((frame, index) => (
-            <Reveal key={frame.src} delayMs={index * 80}>
-              <LookFrame src={frame.src} label={frame.label} />
-            </Reveal>
-          ))}
-        </div>
+      <section className="seam-divider grid gap-6 lg:grid-cols-3">
+        {whyChoose.slice(0, 3).map((item, index) => (
+          <Reveal key={item.title} delayMs={index * 90}>
+            <article className="section-frame h-full p-6">
+              <p className="text-xs uppercase tracking-[0.28em] text-[var(--accent)]">Why Mr. Sergio</p>
+              <h3 className="mt-2 font-display text-3xl text-[var(--ink)]">{item.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">{item.body}</p>
+            </article>
+          </Reveal>
+        ))}
       </section>
 
       <section className="section-frame p-7 text-center md:p-12">
         <Reveal className="mx-auto max-w-3xl space-y-5">
-          <p className="text-xs uppercase tracking-[0.33em] text-[var(--accent)]">Ready To Style Your Fit</p>
-          <h2 className="font-display text-balance text-4xl text-[var(--paper)] md:text-6xl">
-            Reserve A Look Or Start A Custom Suit Conversation
+          <p className="text-xs uppercase tracking-[0.33em] text-[var(--accent)]">Visit Or Text</p>
+          <h2 className="font-display text-balance text-4xl text-[var(--ink)] md:text-6xl">
+            Need Help Picking A Look?
           </h2>
           <p className="text-pretty text-base text-[var(--muted)] md:text-lg">
-            Share your event date, preferred silhouette, and color direction. The team can guide complete outfit decisions fast.
+            Visit the store or send a quick text with your style direction. The team will help you
+            lock in fit, color, and event-ready details.
           </p>
           <div className="flex flex-wrap justify-center gap-3 pt-3">
             <Link href="/shop" className="button-primary">
-              Browse Shop
+              Browse Merchandise
             </Link>
-            <Link href="/custom-suits" className="button-ghost">
-              Start Custom Inquiry
+            <Link href="/contact" className="button-ghost">
+              Contact Store
             </Link>
           </div>
         </Reveal>
@@ -287,6 +188,3 @@ export default function HomePage() {
     </div>
   );
 }
-
-
-

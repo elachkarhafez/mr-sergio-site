@@ -1,6 +1,7 @@
 import instagramManifest from "@/public/media/instagram/manifest.json";
 
 export type ProductCategory =
+  | "casualwear"
   | "suits"
   | "blazers"
   | "dress-shirts"
@@ -9,11 +10,14 @@ export type ProductCategory =
   | "tuxedos"
   | "wedding-formal";
 
+export type MerchStyleType = "casual" | "dressy";
+
 export type Product = {
   slug: string;
   name: string;
   category: ProductCategory;
-  priceRange: string;
+  styleType: MerchStyleType;
+  price: number;
   summary: string;
   details: string[];
   fabricNotes: string;
@@ -126,6 +130,10 @@ export const categoryDetails: Record<
   ProductCategory,
   { label: string; intro: string }
 > = {
+  casualwear: {
+    label: "Casualwear",
+    intro: "Relaxed everyday pieces with a polished boutique finish.",
+  },
   suits: {
     label: "Suits",
     intro: "Sharp two- and three-piece sets built for presence.",
@@ -161,7 +169,8 @@ export const products: Product[] = [
     slug: "obsidian-three-piece",
     name: "Obsidian Three-Piece",
     category: "suits",
-    priceRange: "$",
+    styleType: "dressy",
+    price: 299,
     summary: "A clean-cut three-piece with peak-lapel authority for major moments.",
     details: [
       "Structured shoulder line with sharp drape",
@@ -183,7 +192,8 @@ export const products: Product[] = [
     slug: "midnight-peak-lapel",
     name: "Midnight Peak Lapel",
     category: "tuxedos",
-    priceRange: "$$",
+    styleType: "dressy",
+    price: 349,
     summary: "A black-tie profile with satin contrast and formal edge.",
     details: [
       "Peak lapel for classic evening posture",
@@ -205,7 +215,8 @@ export const products: Product[] = [
     slug: "graphite-windowpane-blazer",
     name: "Graphite Windowpane Blazer",
     category: "blazers",
-    priceRange: "$",
+    styleType: "dressy",
+    price: 219,
     summary: "An editorial blazer with subtle pattern depth and modern shoulders.",
     details: [
       "Windowpane-inspired texture",
@@ -227,7 +238,8 @@ export const products: Product[] = [
     slug: "ceremony-ivory-jacket",
     name: "Ceremony Ivory Jacket",
     category: "wedding-formal",
-    priceRange: "$$",
+    styleType: "dressy",
+    price: 239,
     summary: "A standout light jacket for wedding ceremonies and refined celebrations.",
     details: [
       "High-contrast look for ceremony photos",
@@ -248,7 +260,8 @@ export const products: Product[] = [
     slug: "signature-white-shirt",
     name: "Signature White Dress Shirt",
     category: "dress-shirts",
-    priceRange: "$",
+    styleType: "casual",
+    price: 89,
     summary: "A crisp foundation layer designed for tuxedos, suits, and formal events.",
     details: [
       "Sharp collar stance and clean front",
@@ -266,10 +279,77 @@ export const products: Product[] = [
     ]),
   },
   {
+    slug: "coastal-linen-set",
+    name: "Coastal Linen Set",
+    category: "casualwear",
+    styleType: "casual",
+    price: 149,
+    summary: "A breathable shirt-and-trouser pairing built for elevated daywear.",
+    details: [
+      "Lightweight linen blend for warm-weather comfort",
+      "Relaxed fit with clean drape and minimal structure",
+      "Easy transition from daytime styling to dinner looks",
+    ],
+    fabricNotes: "Airy weave with natural texture and soft hand-feel.",
+    availability: "Seasonal stock. Sizes update weekly.",
+    colors: ["Sand", "Sky", "Stone"],
+    sizes: ["S-XXL"],
+    images: imageSet(15, [
+      "/media/placeholders/steel-blue-blazer.svg",
+      "/media/placeholders/charcoal-windowpane.svg",
+      "/media/placeholders/graphite-crosshatch.svg",
+    ]),
+  },
+  {
+    slug: "weekend-knit-polo",
+    name: "Weekend Knit Polo",
+    category: "casualwear",
+    styleType: "casual",
+    price: 79,
+    summary: "Refined short-sleeve knit polo for smart casual everyday wear.",
+    details: [
+      "Structured collar and clean placket",
+      "Soft stretch knit with breathable finish",
+      "Designed for pairing with denim or tailored trousers",
+    ],
+    fabricNotes: "Mid-light knit with soft stretch and shape retention.",
+    availability: "Core colors in-store.",
+    colors: ["Cream", "Black", "Olive", "Sky"],
+    sizes: ["S-3XL"],
+    images: imageSet(18, [
+      "/media/placeholders/ceremony-accessory-set.svg",
+      "/media/placeholders/espresso-loafer.svg",
+      "/media/placeholders/prom-night-signature.svg",
+    ]),
+  },
+  {
+    slug: "resort-breeze-shirt",
+    name: "Resort Breeze Shirt",
+    category: "dress-shirts",
+    styleType: "casual",
+    price: 95,
+    summary: "Minimal button-up shirt with a relaxed silhouette and polished finish.",
+    details: [
+      "Soft collar and lightweight weave",
+      "Works open over tees or buttoned for clean styling",
+      "Cut for movement with a modern relaxed line",
+    ],
+    fabricNotes: "Breathable cotton-linen blend with subtle texture.",
+    availability: "In-store restocks weekly.",
+    colors: ["Powder Blue", "White", "Sage"],
+    sizes: ["S-XXL"],
+    images: imageSet(21, [
+      "/media/placeholders/graphite-crosshatch.svg",
+      "/media/placeholders/steel-blue-blazer.svg",
+      "/media/placeholders/obsidian-three-piece.svg",
+    ]),
+  },
+  {
     slug: "espresso-formal-loafer",
     name: "Espresso Formal Loafer",
     category: "shoes",
-    priceRange: "$",
+    styleType: "dressy",
+    price: 129,
     summary: "Polished formal loafer with confident profile and event comfort.",
     details: [
       "Streamlined toe shape",
@@ -290,7 +370,8 @@ export const products: Product[] = [
     slug: "ceremony-accessory-set",
     name: "Ceremony Accessory Set",
     category: "accessories",
-    priceRange: "$",
+    styleType: "dressy",
+    price: 115,
     summary: "Pocket squares, ties, and formal accents curated for coordinated looks.",
     details: [
       "Color matching for wedding parties",
@@ -311,7 +392,8 @@ export const products: Product[] = [
     slug: "prom-night-signature",
     name: "Prom Night Signature",
     category: "wedding-formal",
-    priceRange: "$",
+    styleType: "dressy",
+    price: 259,
     summary: "A bold formal set designed for standout prom and celebration looks.",
     details: [
       "Camera-ready line and color options",
@@ -434,6 +516,18 @@ export const instagramCinematic = {
     label: `Look ${index + 1}`,
   })),
 };
+
+export function hasFreeShipping(product: Product) {
+  return product.price > 100;
+}
+
+export function formatUsd(amount: number) {
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 0,
+  }).format(amount);
+}
 
 export function getProductBySlug(slug: string) {
   return products.find((product) => product.slug === slug);

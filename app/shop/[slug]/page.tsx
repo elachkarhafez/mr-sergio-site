@@ -2,9 +2,14 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-import { ProductInquiryForm } from "@/components/forms/product-inquiry-form";
+import { TextAvailabilityCard } from "@/components/shop/text-availability-card";
 import { Reveal } from "@/components/ui/reveal";
-import { getProductBySlug, products } from "@/lib/site-data";
+import {
+  formatUsd,
+  getProductBySlug,
+  hasFreeShipping,
+  products,
+} from "@/lib/site-data";
 
 type ProductPageProps = {
   params: Promise<{ slug: string }>;
@@ -38,6 +43,8 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
     notFound();
   }
 
+  const freeShipping = hasFreeShipping(product);
+
   return (
     <div className="space-y-12 pb-10">
       <section className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
@@ -52,7 +59,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                 className="object-cover"
                 priority
               />
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(9,11,14,0.2)_30%,rgba(9,11,14,0.62)_100%)]" />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.0)_42%,rgba(35,24,10,0.35)_100%)]" />
             </div>
             {product.images.slice(1).map((image, idx) => (
               <div
@@ -73,37 +80,48 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
 
         <Reveal delayMs={120} className="section-frame p-7 md:p-9">
           <p className="text-xs uppercase tracking-[0.28em] text-[var(--accent)]">
-            {product.category.replace("-", " ")}
+            {product.styleType} / {product.category.replace("-", " ")}
           </p>
-          <h1 className="mt-3 font-display text-4xl text-[var(--paper)] md:text-5xl">
+          <h1 className="mt-3 font-display text-4xl text-[var(--ink)] md:text-5xl">
             {product.name}
           </h1>
           <p className="mt-3 max-w-xl text-pretty text-base leading-relaxed text-[var(--muted)]">
             {product.summary}
           </p>
 
+          <div className="mt-6 flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.18em]">
+            <span className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-[var(--ink)]">
+              {formatUsd(product.price)}
+            </span>
+            {freeShipping ? (
+              <span className="rounded-full border border-[var(--accent)] bg-[rgba(199,154,71,0.14)] px-4 py-2 text-[var(--ink)]">
+                Free Shipping
+              </span>
+            ) : null}
+          </div>
+
           <div className="mt-7 grid gap-5 text-sm text-[var(--muted)] md:grid-cols-2">
-            <div className="space-y-2 rounded-xl border border-[var(--line-soft)] bg-[rgba(9,11,14,0.42)] p-4">
-              <p className="text-xs uppercase tracking-[0.22em] text-[var(--paper)]">Style Details</p>
+            <div className="space-y-2 rounded-xl border border-[var(--line-soft)] bg-white p-4">
+              <p className="text-xs uppercase tracking-[0.22em] text-[var(--ink)]">Style Details</p>
               <ul className="space-y-2 leading-relaxed">
                 {product.details.map((detail) => (
-                  <li key={detail}>• {detail}</li>
+                  <li key={detail}>- {detail}</li>
                 ))}
               </ul>
             </div>
 
-            <div className="space-y-2 rounded-xl border border-[var(--line-soft)] bg-[rgba(9,11,14,0.42)] p-4">
-              <p className="text-xs uppercase tracking-[0.22em] text-[var(--paper)]">Availability</p>
+            <div className="space-y-2 rounded-xl border border-[var(--line-soft)] bg-white p-4">
+              <p className="text-xs uppercase tracking-[0.22em] text-[var(--ink)]">Availability</p>
               <p>{product.availability}</p>
-              <p className="pt-2 text-xs uppercase tracking-[0.18em] text-[var(--paper)]">Sizes</p>
+              <p className="pt-2 text-xs uppercase tracking-[0.18em] text-[var(--ink)]">Sizes</p>
               <p>{product.sizes.join(", ")}</p>
-              <p className="pt-2 text-xs uppercase tracking-[0.18em] text-[var(--paper)]">Colors</p>
+              <p className="pt-2 text-xs uppercase tracking-[0.18em] text-[var(--ink)]">Colors</p>
               <p>{product.colors.join(", ")}</p>
             </div>
           </div>
 
-          <div className="mt-6 rounded-xl border border-[var(--line-soft)] bg-[rgba(9,11,14,0.42)] p-4 text-sm text-[var(--muted)]">
-            <p className="text-xs uppercase tracking-[0.22em] text-[var(--paper)]">Fabric / Build Notes</p>
+          <div className="mt-6 rounded-xl border border-[var(--line-soft)] bg-white p-4 text-sm text-[var(--muted)]">
+            <p className="text-xs uppercase tracking-[0.22em] text-[var(--ink)]">Fabric / Build Notes</p>
             <p className="mt-2 leading-relaxed">{product.fabricNotes}</p>
           </div>
         </Reveal>
@@ -111,15 +129,14 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
 
       <section className="seam-divider">
         <Reveal>
-          <ProductInquiryForm
-            defaultProduct={product.name}
-            title="Reserve This Look Or Request Similar"
-            compact
+          <TextAvailabilityCard
+            productName={product.name}
+            defaultStyle={product.name}
+            sizes={product.sizes}
+            colors={product.colors}
           />
         </Reveal>
       </section>
     </div>
   );
 }
-
-

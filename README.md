@@ -13,27 +13,24 @@ Premium, conversion-focused website for **Mr. Sergio** (Dearborn Heights, MI), b
 ## Implemented Pages
 
 - `/` Home
-- `/shop` Shop categories + catalog
-- `/shop/[slug]` Product detail + inquiry
+- `/shop` Style-lane shopping flow (`Casual` / `Dressy`) + category filters
+- `/shop/[slug]` Product detail + prefilled text availability flow
 - `/custom-suits` Custom suit experience + premium form
 - `/lookbook` Editorial gallery
 - `/about` Brand story
-- `/contact` Contact/visit + map + inquiry
+- `/contact` Contact/visit + map + call/text CTAs
 
-## Forms
+## Customer Flows
 
-### Product Inquiry
-Endpoint: `POST /api/inquiry`
-
-Captures:
-- Name
-- Phone
-- Email
-- Selected product
-- Size
-- Color
-- Preferred contact method
-- Notes
+### Merchandise Availability (No Online Checkout)
+- Products are browse-only.
+- If an item is over `$100`, it displays a `Free Shipping` badge.
+- Product detail includes a one-tap SMS flow that pre-fills:
+  - Product
+  - Style
+  - Size
+  - Color
+- SMS target: `(313) 597-3541` (`sms:+13135973541`)
 
 ### Custom Suit Inquiry
 Endpoint: `POST /api/custom-suit`
@@ -51,6 +48,9 @@ Captures:
 - Timeline needed
 - Notes
 - Optional inspiration image metadata
+
+### Optional Legacy Endpoint
+- `POST /api/inquiry` remains in codebase if you want to re-enable a web inquiry form later.
 
 ## Environment Variables
 
@@ -85,7 +85,7 @@ npm run build
 
 - Imported Instagram assets live under `public/media/instagram`
 - Brand crest is stored at `public/media/brand/mr-sergio-crest.jpg`
-- Homepage cinematic module uses downloaded local reels/photos from `@mr.sergiostore`
+- Homepage and lookbook use downloaded local visuals from `@mr.sergiostore`
 - Refresh media import:
 
 ```bash

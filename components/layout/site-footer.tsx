@@ -4,7 +4,7 @@ import { business, weeklyHours } from "@/lib/site-data";
 
 export function SiteFooter() {
   return (
-    <footer className="site-footer relative mt-24 border-t border-[var(--line-soft)] bg-[var(--surface)]">
+    <footer className="site-footer relative mt-24 border-t border-[var(--line-soft)] bg-[var(--surface-2)]">
       <div className="absolute inset-x-0 top-0 h-[1px] bg-[linear-gradient(90deg,transparent,var(--accent),transparent)]" />
       <div className="mx-auto grid w-full max-w-7xl gap-10 px-5 py-14 lg:grid-cols-3 lg:px-8">
         <div className="space-y-4">
@@ -18,22 +18,22 @@ export function SiteFooter() {
             href={business.instagramUrl}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.24em] text-[var(--paper)] hover:text-[var(--accent)]"
+            className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.24em] text-[var(--ink)] hover:text-[var(--accent)]"
           >
-            {business.instagramHandle} <span aria-hidden>?</span>
+            {business.instagramHandle} <span aria-hidden>-&gt;</span>
           </Link>
         </div>
 
         <div className="space-y-3">
-          <h3 className="text-xs uppercase tracking-[0.28em] text-[var(--paper)]">Visit</h3>
+          <h3 className="text-xs uppercase tracking-[0.28em] text-[var(--ink)]">Visit</h3>
           <p className="text-sm text-[var(--muted)]">{business.addressLine}</p>
-          <Link href={`tel:${business.phoneHref}`} className="text-sm text-[var(--paper)]">
+          <Link href={`tel:${business.phoneHref}`} className="text-sm text-[var(--ink)]">
             {business.phoneDisplay}
           </Link>
         </div>
 
         <div className="space-y-3">
-          <h3 className="text-xs uppercase tracking-[0.28em] text-[var(--paper)]">Hours</h3>
+          <h3 className="text-xs uppercase tracking-[0.28em] text-[var(--ink)]">Hours</h3>
           <ul className="space-y-2 text-sm text-[var(--muted)]">
             {weeklyHours.map((entry) => (
               <li key={entry.day} className="flex items-center justify-between gap-4">
