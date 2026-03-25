@@ -35,6 +35,9 @@ export default function RootLayout({
         <div className="pinstripe-field" aria-hidden />
         <div className="tailor-blueprint" aria-hidden />
         <div className="tailor-weave" aria-hidden />
+        <div className="tailor-measure-grid" aria-hidden />
+        <div className="tailor-chalk-sweep" aria-hidden />
+        <div className="tailor-seam-orbit" aria-hidden />
 
         <SiteHeader />
         <main className="mx-auto w-full max-w-7xl flex-1 px-5 pt-10 lg:px-8">{children}</main>
