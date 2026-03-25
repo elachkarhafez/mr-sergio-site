@@ -66,8 +66,8 @@ export function MerchandiseBrowser({
                 type="button"
                 className={`rounded-full border px-5 py-2 text-xs uppercase tracking-[0.2em] transition ${
                   active
-                    ? "border-[var(--accent)] bg-[rgba(199,154,71,0.14)] text-[var(--ink)]"
-                    : "border-[var(--line-soft)] bg-white text-[var(--muted)] hover:border-[var(--line)] hover:text-[var(--ink)]"
+                    ? "border-[var(--accent)] bg-[linear-gradient(180deg,rgba(246,223,183,0.8),rgba(236,201,141,0.58))] text-[var(--ink)] shadow-[0_8px_18px_rgba(121,84,33,0.18)]"
+                    : "border-[var(--line-soft)] bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,248,236,0.9))] text-[var(--muted)] hover:border-[var(--line)] hover:text-[var(--ink)]"
                 }`}
                 onClick={() => {
                   setActiveStyle(option.value);
@@ -88,8 +88,8 @@ export function MerchandiseBrowser({
             type="button"
             className={`rounded-full border px-4 py-2 text-xs uppercase tracking-[0.18em] transition ${
               safeActiveCategory === "all"
-                ? "border-[var(--accent)] bg-[rgba(199,154,71,0.12)] text-[var(--ink)]"
-                : "border-[var(--line-soft)] bg-white text-[var(--muted)] hover:border-[var(--line)] hover:text-[var(--ink)]"
+                ? "border-[var(--accent)] bg-[linear-gradient(180deg,rgba(246,223,183,0.8),rgba(236,201,141,0.58))] text-[var(--ink)] shadow-[0_8px_18px_rgba(121,84,33,0.18)]"
+                : "border-[var(--line-soft)] bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,248,236,0.9))] text-[var(--muted)] hover:border-[var(--line)] hover:text-[var(--ink)]"
             }`}
             onClick={() => setActiveCategory("all")}
           >
@@ -103,8 +103,8 @@ export function MerchandiseBrowser({
                 type="button"
                 className={`rounded-full border px-4 py-2 text-xs uppercase tracking-[0.18em] transition ${
                   active
-                    ? "border-[var(--accent)] bg-[rgba(199,154,71,0.12)] text-[var(--ink)]"
-                    : "border-[var(--line-soft)] bg-white text-[var(--muted)] hover:border-[var(--line)] hover:text-[var(--ink)]"
+                    ? "border-[var(--accent)] bg-[linear-gradient(180deg,rgba(246,223,183,0.8),rgba(236,201,141,0.58))] text-[var(--ink)] shadow-[0_8px_18px_rgba(121,84,33,0.18)]"
+                    : "border-[var(--line-soft)] bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,248,236,0.9))] text-[var(--muted)] hover:border-[var(--line)] hover:text-[var(--ink)]"
                 }`}
                 onClick={() => setActiveCategory(category)}
               >
@@ -116,7 +116,7 @@ export function MerchandiseBrowser({
       </div>
 
       {categoryFiltered.length === 0 ? (
-        <div className="rounded-2xl border border-[var(--line-soft)] bg-white p-6 text-sm text-[var(--muted)]">
+        <div className="premium-surface rounded-2xl border border-[var(--line-soft)] p-6 text-sm text-[var(--muted)]">
           No products in this filter yet. Switch style or category.
         </div>
       ) : (

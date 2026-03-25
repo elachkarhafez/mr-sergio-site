@@ -91,18 +91,18 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
           </p>
 
           <div className="mt-6 flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.18em]">
-            <span className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-[var(--ink)]">
+            <span className="premium-surface rounded-full border border-[var(--line)] px-4 py-2 text-[var(--ink)]">
               {formatUsd(product.price)}
             </span>
             {freeShipping ? (
-              <span className="rounded-full border border-[var(--accent)] bg-[rgba(199,154,71,0.14)] px-4 py-2 text-[var(--ink)]">
+              <span className="premium-surface rounded-full border border-[var(--accent)] bg-[rgba(199,154,71,0.14)] px-4 py-2 text-[var(--ink)]">
                 Free Shipping
               </span>
             ) : null}
           </div>
 
           <div className="mt-7 grid gap-5 text-sm text-[var(--muted)] md:grid-cols-2">
-            <div className="space-y-2 rounded-xl border border-[var(--line-soft)] bg-white p-4">
+            <div className="premium-surface space-y-2 rounded-xl border border-[var(--line-soft)] p-4">
               <p className="text-xs uppercase tracking-[0.22em] text-[var(--ink)]">Style Details</p>
               <ul className="space-y-2 leading-relaxed">
                 {product.details.map((detail) => (
@@ -111,7 +111,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
               </ul>
             </div>
 
-            <div className="space-y-2 rounded-xl border border-[var(--line-soft)] bg-white p-4">
+            <div className="premium-surface space-y-2 rounded-xl border border-[var(--line-soft)] p-4">
               <p className="text-xs uppercase tracking-[0.22em] text-[var(--ink)]">Availability</p>
               <p>{product.availability}</p>
               <p className="pt-2 text-xs uppercase tracking-[0.18em] text-[var(--ink)]">Sizes</p>
@@ -121,7 +121,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
             </div>
           </div>
 
-          <div className="mt-6 rounded-xl border border-[var(--line-soft)] bg-white p-4 text-sm text-[var(--muted)]">
+          <div className="premium-surface mt-6 rounded-xl border border-[var(--line-soft)] p-4 text-sm text-[var(--muted)]">
             <p className="text-xs uppercase tracking-[0.22em] text-[var(--ink)]">Fabric / Build Notes</p>
             <p className="mt-2 leading-relaxed">{product.fabricNotes}</p>
           </div>

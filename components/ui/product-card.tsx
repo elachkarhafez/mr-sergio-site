@@ -38,13 +38,14 @@ export function ProductCard({ product }: { product: Product }) {
           </div>
         </div>
       </div>
-      <div className="space-y-4 px-5 py-5">
+      <div className="premium-surface space-y-4 px-5 py-5">
         <p className="text-sm leading-relaxed text-[var(--muted)]">{product.summary}</p>
+        <div className="h-px w-20 bg-[linear-gradient(90deg,var(--accent),transparent)]" />
         <Link
           href={`/shop/${product.slug}`}
-          className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-[var(--paper)] transition-colors hover:text-[var(--accent)]"
+          className="luxury-inline-link inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] transition-colors hover:text-[var(--accent)]"
         >
-          View details <span aria-hidden>-&gt;</span>
+          Explore details <span aria-hidden>-&gt;</span>
         </Link>
       </div>
     </article>

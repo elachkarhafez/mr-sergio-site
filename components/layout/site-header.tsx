@@ -18,9 +18,10 @@ export function SiteHeader() {
   const pathname = usePathname();
 
   return (
-    <header className="site-header sticky top-0 z-40 border-b border-[var(--line-soft)] bg-[rgba(255,250,242,0.9)] backdrop-blur-xl">
+    <header className="site-header luxury-nav-shell sticky top-0 z-40 border-b border-[var(--line-soft)] backdrop-blur-xl">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
         <Link href="/" className="site-brand group inline-flex items-center gap-3">
+          <span className="luxury-crest-dot" aria-hidden />
           <span className="text-xs uppercase tracking-[0.32em] text-[var(--ink)]">
             {business.name}
           </span>

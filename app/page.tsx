@@ -26,7 +26,7 @@ export default function HomePage() {
               Dearborn Heights Menswear
             </p>
             <h1 className="hero-headline text-[var(--ink)]">
-              Premium Looks, Simple Shopping.
+              Premium Looks, Signature Presence.
             </h1>
             <p className="max-w-xl text-pretty text-base leading-relaxed text-[var(--muted)] md:text-lg">
               Browse merchandise in two clean lanes: Casual or Dressy. Pick a category, view
@@ -78,7 +78,7 @@ export default function HomePage() {
               />
               <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.05)_40%,rgba(44,29,10,0.48)_100%)]" />
               <div className="tailor-spotlight" aria-hidden />
-              <div className="absolute bottom-5 left-5 right-5 rounded-xl border border-[rgba(255,255,255,0.34)] bg-[rgba(255,255,255,0.82)] p-4 backdrop-blur">
+              <div className="premium-floating-panel absolute bottom-5 left-5 right-5 rounded-xl border border-[rgba(255,255,255,0.34)] p-4 backdrop-blur">
                 <p className="text-[10px] uppercase tracking-[0.24em] text-[var(--accent)]">
                   Fast Flow
                 </p>
@@ -98,7 +98,7 @@ export default function HomePage() {
           description="A clear split keeps browsing simple for customers and directs them straight to the right merchandise."
         />
         <div className="grid gap-6 md:grid-cols-2">
-          <Reveal className="section-frame p-6">
+          <Reveal className="section-frame premium-lane p-6">
             <p className="text-xs uppercase tracking-[0.28em] text-[var(--accent)]">Casual</p>
             <h3 className="mt-2 font-display text-3xl text-[var(--ink)]">Everyday Polish</h3>
             <div className="mt-4 flex flex-wrap gap-2">
@@ -117,7 +117,7 @@ export default function HomePage() {
             </Link>
           </Reveal>
 
-          <Reveal className="section-frame p-6" delayMs={100}>
+          <Reveal className="section-frame premium-lane p-6" delayMs={100}>
             <p className="text-xs uppercase tracking-[0.28em] text-[var(--accent)]">Dressy</p>
             <h3 className="mt-2 font-display text-3xl text-[var(--ink)]">Formal Precision</h3>
             <div className="mt-4 flex flex-wrap gap-2">
@@ -156,7 +156,7 @@ export default function HomePage() {
       <section className="seam-divider grid gap-6 lg:grid-cols-3">
         {whyChoose.slice(0, 3).map((item, index) => (
           <Reveal key={item.title} delayMs={index * 90}>
-            <article className="section-frame h-full p-6">
+            <article className="section-frame premium-note h-full p-6">
               <p className="text-xs uppercase tracking-[0.28em] text-[var(--accent)]">Why Mr. Sergio</p>
               <h3 className="mt-2 font-display text-3xl text-[var(--ink)]">{item.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">{item.body}</p>
@@ -165,7 +165,7 @@ export default function HomePage() {
         ))}
       </section>
 
-      <section className="section-frame p-7 text-center md:p-12">
+      <section className="section-frame premium-cta p-7 text-center md:p-12">
         <Reveal className="mx-auto max-w-3xl space-y-5">
           <p className="text-xs uppercase tracking-[0.33em] text-[var(--accent)]">Visit Or Text</p>
           <h2 className="font-display text-balance text-4xl text-[var(--ink)] md:text-6xl">

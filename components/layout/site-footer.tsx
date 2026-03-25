@@ -4,7 +4,7 @@ import { business, weeklyHours } from "@/lib/site-data";
 
 export function SiteFooter() {
   return (
-    <footer className="site-footer relative mt-24 border-t border-[var(--line-soft)] bg-[var(--surface-2)]">
+    <footer className="site-footer luxury-footer-shell relative mt-24 border-t border-[var(--line-soft)] bg-[var(--surface-2)]">
       <div className="absolute inset-x-0 top-0 h-[1px] bg-[linear-gradient(90deg,transparent,var(--accent),transparent)]" />
       <div className="mx-auto grid w-full max-w-7xl gap-10 px-5 py-14 lg:grid-cols-3 lg:px-8">
         <div className="space-y-4">

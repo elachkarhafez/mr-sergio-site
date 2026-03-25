@@ -34,7 +34,7 @@ export function TextAvailabilityCard({
   const smsHref = `sms:${business.phoneHref}?body=${encodeURIComponent(message)}`;
 
   return (
-    <div className="space-y-5 rounded-2xl border border-[var(--line-soft)] bg-white p-6">
+    <div className="premium-surface space-y-5 rounded-2xl border border-[var(--line-soft)] p-6">
       <div className="space-y-2">
         <p className="text-xs uppercase tracking-[0.26em] text-[var(--accent)]">
           Text Availability
@@ -80,4 +80,3 @@ export function TextAvailabilityCard({
     </div>
   );
 }
-

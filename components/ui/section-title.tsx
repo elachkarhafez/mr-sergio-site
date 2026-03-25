@@ -23,7 +23,7 @@ export function SectionTitle({
           <span className="section-title-mark" aria-hidden />
         </div>
       ) : null}
-      <h2 className="font-display text-balance text-3xl leading-tight text-[var(--paper)] md:text-5xl">
+      <h2 className="font-display text-balance text-3xl leading-tight text-[var(--ink-soft)] md:text-5xl">
         {title}
       </h2>
       {description ? (
