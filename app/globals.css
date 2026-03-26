@@ -330,24 +330,180 @@ textarea {
   transform: translateY(0);
 }
 
+.oak-frame {
+  --oak-frame: 16px;
+  --oak-trim: 4px;
+  --oak-cut: 14px;
+  position: relative;
+  border: var(--oak-frame) solid transparent;
+  border-radius: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 247, 231, 0.94)) padding-box,
+    linear-gradient(132deg, #f6e8cf 0%, #ebd2aa 22%, #cf9b5d 52%, #f3dfbe 76%, #daab70 100%)
+      border-box,
+    url("/media/design/oak-grain.svg") border-box;
+  background-size: auto, auto, 220px 220px;
+  background-position: center center;
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 251, 240, 0.55),
+    inset 0 -1px 0 rgba(124, 83, 32, 0.22),
+    inset 0 0 0 var(--oak-trim) rgba(255, 246, 229, 0.38);
+  -webkit-mask:
+    radial-gradient(
+      circle at var(--oak-cut) var(--oak-cut),
+      transparent calc(var(--oak-cut) - 0.8px),
+      #000 calc(var(--oak-cut) + 0.8px)
+    )
+      top left / 51% 51% no-repeat,
+    radial-gradient(
+      circle at calc(100% - var(--oak-cut)) var(--oak-cut),
+      transparent calc(var(--oak-cut) - 0.8px),
+      #000 calc(var(--oak-cut) + 0.8px)
+    )
+      top right / 51% 51% no-repeat,
+    radial-gradient(
+      circle at var(--oak-cut) calc(100% - var(--oak-cut)),
+      transparent calc(var(--oak-cut) - 0.8px),
+      #000 calc(var(--oak-cut) + 0.8px)
+    )
+      bottom left / 51% 51% no-repeat,
+    radial-gradient(
+      circle at calc(100% - var(--oak-cut)) calc(100% - var(--oak-cut)),
+      transparent calc(var(--oak-cut) - 0.8px),
+      #000 calc(var(--oak-cut) + 0.8px)
+    )
+      bottom right / 51% 51% no-repeat,
+    linear-gradient(#000 0 0);
+  mask:
+    radial-gradient(
+      circle at var(--oak-cut) var(--oak-cut),
+      transparent calc(var(--oak-cut) - 0.8px),
+      #000 calc(var(--oak-cut) + 0.8px)
+    )
+      top left / 51% 51% no-repeat,
+    radial-gradient(
+      circle at calc(100% - var(--oak-cut)) var(--oak-cut),
+      transparent calc(var(--oak-cut) - 0.8px),
+      #000 calc(var(--oak-cut) + 0.8px)
+    )
+      top right / 51% 51% no-repeat,
+    radial-gradient(
+      circle at var(--oak-cut) calc(100% - var(--oak-cut)),
+      transparent calc(var(--oak-cut) - 0.8px),
+      #000 calc(var(--oak-cut) + 0.8px)
+    )
+      bottom left / 51% 51% no-repeat,
+    radial-gradient(
+      circle at calc(100% - var(--oak-cut)) calc(100% - var(--oak-cut)),
+      transparent calc(var(--oak-cut) - 0.8px),
+      #000 calc(var(--oak-cut) + 0.8px)
+    )
+      bottom right / 51% 51% no-repeat,
+    linear-gradient(#000 0 0);
+}
+
+.oak-frame__content {
+  position: relative;
+  min-height: 100%;
+  background: transparent;
+}
+
+.oak-frame--panel {
+  --oak-frame: 16px;
+  --oak-trim: 4px;
+  --oak-cut: 14px;
+}
+
+.oak-frame--card {
+  --oak-frame: 14px;
+  --oak-trim: 4px;
+  --oak-cut: 13px;
+}
+
+.oak-frame--pill {
+  --oak-frame: 10px;
+  --oak-trim: 3px;
+  --oak-cut: 10px;
+  display: inline-block;
+}
+
+.oak-frame__content--pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.oak-frame:hover {
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 252, 243, 0.64),
+    inset 0 -1px 0 rgba(124, 83, 32, 0.22),
+    inset 0 0 0 var(--oak-trim) rgba(255, 248, 235, 0.46);
+}
+
 .section-frame,
 .hero-stat-card,
 .product-card,
 .look-frame,
 .product-wood-frame,
 .oak-menu-shell,
-.premium-floating-panel {
+.premium-floating-panel,
+.premium-surface {
   --oak-cut: var(--oak-notch);
-  clip-path: polygon(
-    var(--oak-cut) 0,
-    calc(100% - var(--oak-cut)) 0,
-    100% var(--oak-cut),
-    100% calc(100% - var(--oak-cut)),
-    calc(100% - var(--oak-cut)) 100%,
-    var(--oak-cut) 100%,
-    0 calc(100% - var(--oak-cut)),
-    0 var(--oak-cut)
-  );
+  -webkit-mask:
+    radial-gradient(
+      circle at var(--oak-cut) var(--oak-cut),
+      transparent calc(var(--oak-cut) - 0.8px),
+      #000 calc(var(--oak-cut) + 0.8px)
+    )
+      top left / 51% 51% no-repeat,
+    radial-gradient(
+      circle at calc(100% - var(--oak-cut)) var(--oak-cut),
+      transparent calc(var(--oak-cut) - 0.8px),
+      #000 calc(var(--oak-cut) + 0.8px)
+    )
+      top right / 51% 51% no-repeat,
+    radial-gradient(
+      circle at var(--oak-cut) calc(100% - var(--oak-cut)),
+      transparent calc(var(--oak-cut) - 0.8px),
+      #000 calc(var(--oak-cut) + 0.8px)
+    )
+      bottom left / 51% 51% no-repeat,
+    radial-gradient(
+      circle at calc(100% - var(--oak-cut)) calc(100% - var(--oak-cut)),
+      transparent calc(var(--oak-cut) - 0.8px),
+      #000 calc(var(--oak-cut) + 0.8px)
+    )
+      bottom right / 51% 51% no-repeat,
+    linear-gradient(#000 0 0);
+  mask:
+    radial-gradient(
+      circle at var(--oak-cut) var(--oak-cut),
+      transparent calc(var(--oak-cut) - 0.8px),
+      #000 calc(var(--oak-cut) + 0.8px)
+    )
+      top left / 51% 51% no-repeat,
+    radial-gradient(
+      circle at calc(100% - var(--oak-cut)) var(--oak-cut),
+      transparent calc(var(--oak-cut) - 0.8px),
+      #000 calc(var(--oak-cut) + 0.8px)
+    )
+      top right / 51% 51% no-repeat,
+    radial-gradient(
+      circle at var(--oak-cut) calc(100% - var(--oak-cut)),
+      transparent calc(var(--oak-cut) - 0.8px),
+      #000 calc(var(--oak-cut) + 0.8px)
+    )
+      bottom left / 51% 51% no-repeat,
+    radial-gradient(
+      circle at calc(100% - var(--oak-cut)) calc(100% - var(--oak-cut)),
+      transparent calc(var(--oak-cut) - 0.8px),
+      #000 calc(var(--oak-cut) + 0.8px)
+    )
+      bottom right / 51% 51% no-repeat,
+    linear-gradient(#000 0 0);
 }
 
 .section-frame {
@@ -355,33 +511,19 @@ textarea {
   isolation: isolate;
   overflow: hidden;
   border-radius: 0;
-  border: 10px solid transparent;
+  border: 16px solid transparent;
   background:
-    linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.98),
-      rgba(255, 250, 239, 0.96) 58%,
-      rgba(255, 245, 227, 0.95)
-    ) padding-box,
-    repeating-linear-gradient(
-      100deg,
-      rgba(125, 81, 31, 0.34) 0 1px,
-      rgba(234, 204, 162, 0.42) 1px 7px,
-      rgba(166, 116, 56, 0.3) 7px 8px
-    ) border-box,
-    linear-gradient(
-      132deg,
-      var(--oak-highlight) 0%,
-      #ecd2aa 20%,
-      var(--oak-mid) 46%,
-      #f4dfbf 72%,
-      #d8a86d 100%
-    ) border-box;
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 247, 232, 0.95)) padding-box,
+    linear-gradient(132deg, #f6e8cf 0%, #ebd2aa 22%, #cf9b5d 52%, #f3dfbe 76%, #daab70 100%)
+      border-box,
+    url("/media/design/oak-grain.svg") border-box;
+  background-size: auto, auto, 240px 240px;
+  background-position: center center;
   box-shadow:
-    0 20px 42px rgba(117, 77, 26, 0.15),
-    0 6px 14px rgba(117, 77, 26, 0.11),
-    inset 0 0 0 1px rgba(255, 248, 234, 0.74),
-    inset 0 -26px 34px rgba(180, 124, 57, 0.08);
+    0 8px 20px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 251, 240, 0.52),
+    inset 0 -1px 0 rgba(124, 83, 32, 0.2),
+    inset 0 0 0 4px rgba(255, 246, 229, 0.38);
 }
 
 .section-frame > * {
@@ -392,18 +534,9 @@ textarea {
 .section-frame::before {
   content: "";
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 2px;
-  background:
-    linear-gradient(90deg, transparent, rgba(199, 153, 69, 0.95), transparent),
-    repeating-linear-gradient(
-      90deg,
-      rgba(199, 153, 69, 0.4) 0 8px,
-      transparent 8px 16px
-    );
-  animation: stitchRail 22s linear infinite;
+  inset: 4px;
+  border: 1px solid rgba(255, 246, 228, 0.6);
+  pointer-events: none;
 }
 
 .section-frame::after {
@@ -411,14 +544,9 @@ textarea {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(
-    108deg,
-    transparent 26%,
-    rgba(255, 255, 255, 0.42) 40%,
-    transparent 56%
-  );
-  transform: translateX(-125%);
-  animation: spotlightSweep 13s ease-in-out infinite;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 252, 243, 0.44),
+    inset 0 -1px 0 rgba(115, 76, 30, 0.18);
 }
 
 .seam-divider {
@@ -475,36 +603,30 @@ textarea {
 }
 
 .hero-stat-card {
-  border: 8px solid transparent;
+  border: 14px solid transparent;
   border-radius: 0;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.97), rgba(255, 247, 233, 0.94)) padding-box,
-    repeating-linear-gradient(
-      105deg,
-      rgba(129, 86, 39, 0.32) 0 1px,
-      rgba(236, 208, 166, 0.42) 1px 7px,
-      rgba(165, 115, 55, 0.28) 7px 8px
-    ) border-box,
-    linear-gradient(
-      134deg,
-      var(--oak-highlight) 0%,
-      #ebd2aa 24%,
-      var(--oak-mid) 52%,
-      #f4dfbf 76%,
-      #d8a86d 100%
-    ),
-    linear-gradient(180deg, rgba(255, 253, 246, 0.95), rgba(255, 241, 216, 0.9));
+    linear-gradient(132deg, #f6e8cf 0%, #ebd2aa 22%, #cf9b5d 52%, #f3dfbe 76%, #daab70 100%)
+      border-box,
+    url("/media/design/oak-grain.svg") border-box;
+  background-size: auto, auto, 220px 220px;
+  background-position: center center;
   box-shadow:
-    0 14px 26px rgba(120, 80, 28, 0.17),
-    inset 0 0 0 1px rgba(255, 245, 226, 0.7);
+    0 8px 20px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 252, 242, 0.52),
+    inset 0 -1px 0 rgba(124, 83, 32, 0.18),
+    inset 0 0 0 4px rgba(255, 246, 228, 0.36);
   transition: transform 260ms ease, border-color 260ms ease, box-shadow 260ms ease;
 }
 
 .hero-stat-card:hover {
   transform: translateY(-4px);
   box-shadow:
-    0 18px 30px rgba(120, 80, 28, 0.24),
-    inset 0 0 0 1px rgba(255, 247, 231, 0.76);
+    0 10px 24px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 252, 243, 0.62),
+    inset 0 -1px 0 rgba(124, 83, 32, 0.18),
+    inset 0 0 0 4px rgba(255, 248, 235, 0.46);
 }
 
 .wood-frame {
@@ -524,7 +646,7 @@ textarea {
 .product-wood-frame {
   position: relative;
   border-radius: 0;
-  border: 11px solid transparent;
+  border: 16px solid transparent;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02)) padding-box,
     repeating-linear-gradient(
@@ -576,7 +698,7 @@ textarea {
   box-shadow:
     0 16px 30px rgba(102, 66, 23, 0.26),
     inset 0 0 0 1px rgba(255, 247, 233, 0.6),
-    inset 0 0 0 14px rgba(191, 138, 69, 0.24);
+    inset 0 0 0 4px rgba(255, 246, 229, 0.38);
 }
 
 .product-wood-frame-thick::before {
@@ -618,7 +740,7 @@ textarea {
 }
 
 .product-card {
-  border: 9px solid transparent;
+  border: 14px solid transparent;
   border-radius: 0;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 245, 227, 0.95)) padding-box,
@@ -635,18 +757,25 @@ textarea {
       var(--oak-mid) 52%,
       #f4dfbf 76%,
       #d8a86d 100%
-    ) border-box;
+    ) border-box,
+    url("/media/design/oak-grain.svg") border-box;
+  background-size: auto, auto, auto, 220px 220px;
+  background-position: center center;
   box-shadow:
-    0 12px 30px rgba(115, 77, 27, 0.17),
-    inset 0 0 0 1px rgba(255, 246, 228, 0.72);
+    0 8px 20px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 252, 242, 0.52),
+    inset 0 -1px 0 rgba(124, 83, 32, 0.18),
+    inset 0 0 0 4px rgba(255, 246, 228, 0.36);
   transition: transform 260ms ease, border-color 260ms ease, box-shadow 260ms ease;
 }
 
 .product-card:hover {
   transform: translateY(-5px);
   box-shadow:
-    0 18px 40px rgba(123, 83, 30, 0.26),
-    inset 0 0 0 1px rgba(255, 248, 233, 0.76);
+    0 10px 24px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 252, 243, 0.62),
+    inset 0 -1px 0 rgba(124, 83, 32, 0.18),
+    inset 0 0 0 4px rgba(255, 248, 235, 0.46);
 }
 
 .product-card-sheen {
@@ -679,7 +808,7 @@ textarea {
 }
 
 .look-frame {
-  border: 9px solid transparent;
+  border: 14px solid transparent;
   border-radius: 0;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03)) padding-box,
@@ -696,18 +825,25 @@ textarea {
       var(--oak-mid) 52%,
       #f4dfbf 76%,
       #d8a86d 100%
-    ) border-box;
+    ) border-box,
+    url("/media/design/oak-grain.svg") border-box;
+  background-size: auto, auto, auto, 220px 220px;
+  background-position: center center;
   box-shadow:
-    0 14px 30px rgba(115, 78, 26, 0.24),
-    inset 0 0 0 1px rgba(255, 245, 227, 0.7);
+    0 8px 20px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 252, 242, 0.52),
+    inset 0 -1px 0 rgba(124, 83, 32, 0.18),
+    inset 0 0 0 4px rgba(255, 246, 228, 0.36);
   transition: transform 260ms ease, border-color 260ms ease, box-shadow 260ms ease;
 }
 
 .look-frame:hover {
   transform: translateY(-6px);
   box-shadow:
-    0 18px 36px rgba(115, 78, 26, 0.28),
-    inset 0 0 0 1px rgba(255, 248, 233, 0.74);
+    0 10px 24px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 252, 243, 0.62),
+    inset 0 -1px 0 rgba(124, 83, 32, 0.18),
+    inset 0 0 0 4px rgba(255, 248, 235, 0.46);
 }
 
 .look-frame::before {
@@ -803,7 +939,7 @@ textarea {
 }
 
 .oak-menu-shell {
-  border: 8px solid transparent;
+  border: 12px solid transparent;
   border-radius: 0;
   background:
     linear-gradient(180deg, rgba(255, 251, 245, 0.98), rgba(255, 245, 229, 0.97)) padding-box,
@@ -820,10 +956,15 @@ textarea {
       var(--oak-mid) 52%,
       #f4dfbf 76%,
       #d8a86d 100%
-    ) border-box;
+    ) border-box,
+    url("/media/design/oak-grain.svg") border-box;
+  background-size: auto, auto, auto, 220px 220px;
+  background-position: center center;
   box-shadow:
-    0 14px 28px rgba(115, 78, 25, 0.22),
-    inset 0 0 0 1px rgba(255, 245, 227, 0.76);
+    0 8px 20px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 252, 242, 0.5),
+    inset 0 -1px 0 rgba(124, 83, 32, 0.18),
+    inset 0 0 0 3px rgba(255, 246, 228, 0.34);
 }
 
 .luxury-footer-shell {
@@ -837,7 +978,7 @@ textarea {
 }
 
 .premium-floating-panel {
-  border: 7px solid transparent;
+  border: 12px solid transparent;
   border-radius: 0;
   background:
     linear-gradient(180deg, rgba(255, 251, 244, 0.94), rgba(255, 245, 228, 0.94)) padding-box,
@@ -847,10 +988,15 @@ textarea {
       rgba(236, 207, 167, 0.34) 1px 7px,
       rgba(166, 116, 56, 0.22) 7px 8px
     ) border-box,
-    linear-gradient(132deg, #f4e2c4 0%, #d5a566 52%, #f1ddbc 100%) border-box;
+    linear-gradient(132deg, #f4e2c4 0%, #d5a566 52%, #f1ddbc 100%) border-box,
+    url("/media/design/oak-grain.svg") border-box;
+  background-size: auto, auto, auto, 220px 220px;
+  background-position: center center;
   box-shadow:
-    0 10px 22px rgba(117, 77, 26, 0.22),
-    inset 0 0 0 1px rgba(255, 245, 226, 0.74);
+    0 8px 20px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 252, 242, 0.5),
+    inset 0 -1px 0 rgba(124, 83, 32, 0.18),
+    inset 0 0 0 3px rgba(255, 246, 228, 0.34);
 }
 
 .premium-lane {
@@ -873,7 +1019,7 @@ textarea {
 }
 
 .premium-surface {
-  border: 6px solid transparent;
+  border: 12px solid transparent;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 247, 232, 0.94)) padding-box,
     repeating-linear-gradient(
@@ -882,10 +1028,15 @@ textarea {
       rgba(236, 207, 167, 0.3) 1px 7px,
       rgba(166, 116, 56, 0.2) 7px 8px
     ) border-box,
-    linear-gradient(132deg, #f4e2c4 0%, #d5a566 52%, #f1ddbc 100%) border-box;
+    linear-gradient(132deg, #f4e2c4 0%, #d5a566 52%, #f1ddbc 100%) border-box,
+    url("/media/design/oak-grain.svg") border-box;
+  background-size: auto, auto, auto, 220px 220px;
+  background-position: center center;
   box-shadow:
-    0 10px 24px rgba(118, 81, 31, 0.14),
-    inset 0 0 0 1px rgba(255, 247, 232, 0.74);
+    0 8px 20px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 252, 242, 0.5),
+    inset 0 -1px 0 rgba(124, 83, 32, 0.18),
+    inset 0 0 0 3px rgba(255, 246, 228, 0.34);
 }
 
 .luxury-inline-link {
@@ -909,6 +1060,39 @@ textarea {
 
 .luxury-inline-link:hover::after {
   transform: scaleX(1);
+}
+
+@media (max-width: 768px) {
+  .oak-frame {
+    --oak-frame: 10px;
+    --oak-trim: 3px;
+    --oak-cut: 10px;
+  }
+
+  .section-frame,
+  .hero-stat-card,
+  .product-card,
+  .look-frame,
+  .product-wood-frame,
+  .oak-menu-shell,
+  .premium-floating-panel,
+  .premium-surface {
+    --oak-cut: 10px;
+    border-width: 10px;
+    box-shadow:
+      0 6px 14px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 252, 242, 0.48),
+      inset 0 -1px 0 rgba(124, 83, 32, 0.16),
+      inset 0 0 0 3px rgba(255, 246, 228, 0.32);
+  }
+
+  .section-frame::before {
+    inset: 3px;
+  }
+
+  .product-wood-frame::before {
+    inset: 3px;
+  }
 }
 
 @keyframes royalWaveSlide {

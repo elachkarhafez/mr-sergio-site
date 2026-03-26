@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { OakFrame } from "@/components/ui/oak-frame";
 import { ProductCard } from "@/components/ui/product-card";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionTitle } from "@/components/ui/section-title";
@@ -22,6 +23,11 @@ export default function HomePage() {
       <section className="section-frame hero-atmosphere overflow-hidden p-7 md:p-12">
         <div className="grid gap-8 lg:grid-cols-[1fr_0.95fr] lg:items-center">
           <Reveal className="space-y-6">
+            <OakFrame variant="pill" className="inline-flex">
+              <span className="px-4 py-1 text-[10px] uppercase tracking-[0.26em] text-[var(--accent-deep)]">
+                Royal Service Direction
+              </span>
+            </OakFrame>
             <p className="text-xs uppercase tracking-[0.35em] text-[var(--accent)]">
               Dearborn Heights Menswear
             </p>
@@ -46,23 +52,29 @@ export default function HomePage() {
             </div>
 
             <div className="grid gap-4 text-sm text-[var(--muted)] sm:grid-cols-3">
-              <div className="hero-stat-card rounded-xl border border-[var(--line-soft)] bg-white p-4">
-                <p className="text-[10px] uppercase tracking-[0.26em]">Followers</p>
-                <p className="mt-2 font-display text-2xl text-[var(--ink)]">
-                  {business.profileSnapshot.followersLabel}
-                </p>
-                <p className="text-xs">Instagram</p>
-              </div>
-              <div className="hero-stat-card rounded-xl border border-[var(--line-soft)] bg-white p-4">
-                <p className="text-[10px] uppercase tracking-[0.26em]">Merchandise</p>
-                <p className="mt-2 font-display text-2xl text-[var(--ink)]">{products.length}</p>
-                <p className="text-xs">Current styles</p>
-              </div>
-              <div className="hero-stat-card rounded-xl border border-[var(--line-soft)] bg-white p-4">
-                <p className="text-[10px] uppercase tracking-[0.26em]">Shipping</p>
-                <p className="mt-2 font-display text-2xl text-[var(--ink)]">Free</p>
-                <p className="text-xs">On items over $100</p>
-              </div>
+              <OakFrame variant="card" className="hero-stat-card">
+                <div className="p-4">
+                  <p className="text-[10px] uppercase tracking-[0.26em]">Followers</p>
+                  <p className="mt-2 font-display text-2xl text-[var(--ink)]">
+                    {business.profileSnapshot.followersLabel}
+                  </p>
+                  <p className="text-xs">Instagram</p>
+                </div>
+              </OakFrame>
+              <OakFrame variant="card" className="hero-stat-card">
+                <div className="p-4">
+                  <p className="text-[10px] uppercase tracking-[0.26em]">Merchandise</p>
+                  <p className="mt-2 font-display text-2xl text-[var(--ink)]">{products.length}</p>
+                  <p className="text-xs">Current styles</p>
+                </div>
+              </OakFrame>
+              <OakFrame variant="card" className="hero-stat-card">
+                <div className="p-4">
+                  <p className="text-[10px] uppercase tracking-[0.26em]">Shipping</p>
+                  <p className="mt-2 font-display text-2xl text-[var(--ink)]">Free</p>
+                  <p className="text-xs">On items over $100</p>
+                </div>
+              </OakFrame>
             </div>
           </Reveal>
 
@@ -165,26 +177,28 @@ export default function HomePage() {
         ))}
       </section>
 
-      <section className="section-frame premium-cta p-7 text-center md:p-12">
-        <Reveal className="mx-auto max-w-3xl space-y-5">
-          <p className="text-xs uppercase tracking-[0.33em] text-[var(--accent)]">Visit Or Text</p>
-          <h2 className="font-display text-balance text-4xl text-[var(--ink)] md:text-6xl">
-            Need Help Picking A Look?
-          </h2>
-          <p className="text-pretty text-base text-[var(--muted)] md:text-lg">
-            Visit the store or send a quick text with your style direction. The team will help you
-            lock in fit, color, and event-ready details.
-          </p>
-          <div className="flex flex-wrap justify-center gap-3 pt-3">
-            <Link href="/shop" className="button-primary">
-              Browse Merchandise
-            </Link>
-            <Link href="/contact" className="button-ghost">
-              Contact Store
-            </Link>
-          </div>
-        </Reveal>
-      </section>
+      <OakFrame variant="panel" className="premium-cta">
+        <section className="p-7 text-center md:p-12">
+          <Reveal className="mx-auto max-w-3xl space-y-5">
+            <p className="text-xs uppercase tracking-[0.33em] text-[var(--accent)]">Visit Or Text</p>
+            <h2 className="font-display text-balance text-4xl text-[var(--ink)] md:text-6xl">
+              Need Help Picking A Look?
+            </h2>
+            <p className="text-pretty text-base text-[var(--muted)] md:text-lg">
+              Visit the store or send a quick text with your style direction. The team will help you
+              lock in fit, color, and event-ready details.
+            </p>
+            <div className="flex flex-wrap justify-center gap-3 pt-3">
+              <Link href="/shop" className="button-primary">
+                Browse Merchandise
+              </Link>
+              <Link href="/contact" className="button-ghost">
+                Contact Store
+              </Link>
+            </div>
+          </Reveal>
+        </section>
+      </OakFrame>
     </div>
   );
 }
