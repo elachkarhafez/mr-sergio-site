@@ -8,7 +8,7 @@ import { SectionTitle } from "@/components/ui/section-title";
 import { business, categoryDetails, products, whyChoose } from "@/lib/site-data";
 
 const featured = products.slice(0, 6);
-const heroImage = products[0]?.images[0] ?? "/media/brand/mr-sergio-crest.jpg";
+const heroImage = "/media/instagram/images/look-01.jpg";
 
 const casualCategories = Array.from(
   new Set(products.filter((item) => item.styleType === "casual").map((item) => item.category)),
