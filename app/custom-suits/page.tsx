@@ -28,14 +28,16 @@ export default function CustomSuitsPage() {
             </p>
           </Reveal>
           <Reveal delayMs={130}>
-            <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-2xl border border-[var(--line-soft)]">
-              <Image
-                src="/media/instagram/images/look-10.jpg"
-                alt="Custom suit concept"
-                fill
-                sizes="(max-width: 1024px) 100vw, 36vw"
-                className="object-cover"
-              />
+            <div className="product-wood-frame mx-auto w-full max-w-sm p-2">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
+                <Image
+                  src="/media/instagram/images/look-10.jpg"
+                  alt="Custom suit concept"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 36vw"
+                  className="object-cover"
+                />
+              </div>
             </div>
           </Reveal>
         </div>

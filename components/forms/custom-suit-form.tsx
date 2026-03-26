@@ -82,7 +82,7 @@ export function CustomSuitForm() {
   return (
     <form
       onSubmit={onSubmit}
-      className="space-y-5 rounded-2xl border border-[var(--line-soft)] bg-[var(--surface-2)] p-6"
+      className="premium-surface space-y-5 rounded-2xl border border-[var(--line-soft)] bg-[var(--surface-2)] p-6"
       encType="multipart/form-data"
       noValidate
     >

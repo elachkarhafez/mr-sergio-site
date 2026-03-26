@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -21,7 +22,15 @@ export function SiteHeader() {
     <header className="site-header luxury-nav-shell sticky top-0 z-40 border-b border-[var(--line-soft)] backdrop-blur-xl">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
         <Link href="/" className="site-brand group inline-flex items-center gap-3">
-          <span className="luxury-crest-dot" aria-hidden />
+          <span className="brand-logo-frame">
+            <Image
+              src="/media/brand/mr-sergio-crest.jpg"
+              alt="Mr Sergio logo"
+              width={28}
+              height={28}
+              className="brand-logo-img"
+            />
+          </span>
           <span className="text-xs uppercase tracking-[0.32em] text-[var(--ink)]">
             {business.name}
           </span>
@@ -59,7 +68,7 @@ export function SiteHeader() {
           <summary className="list-none rounded-full border border-[var(--line)] px-4 py-2 text-[11px] uppercase tracking-[0.25em] text-[var(--ink)]">
             Menu
           </summary>
-          <div className="absolute right-0 mt-3 min-w-[220px] overflow-hidden rounded-xl border border-[var(--line-soft)] bg-[rgba(255,250,242,0.98)] p-3 shadow-xl">
+          <div className="oak-menu-shell absolute right-0 mt-3 min-w-[220px] overflow-hidden rounded-xl border border-[var(--line-soft)] bg-[rgba(255,250,242,0.98)] p-3 shadow-xl">
             <nav className="flex flex-col gap-2">
               {links.map((link) => (
                 <Link

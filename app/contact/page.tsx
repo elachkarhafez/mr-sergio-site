@@ -72,14 +72,16 @@ export default function ContactPage() {
         </Reveal>
 
         <Reveal delayMs={140} className="section-frame overflow-hidden p-2">
-          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-[var(--line-soft)]">
-            <iframe
-              title="Mr Sergio map"
-              src={mapSrc}
-              loading="lazy"
-              className="h-full w-full"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+          <div className="product-wood-frame p-2">
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl">
+              <iframe
+                title="Mr Sergio map"
+                src={mapSrc}
+                loading="lazy"
+                className="h-full w-full"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
           </div>
         </Reveal>
       </section>
